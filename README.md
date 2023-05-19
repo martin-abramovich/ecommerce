@@ -16,5 +16,7 @@ Vamos a realizar un e-commerce. La idea es crear una tienda online para alguna e
 - Soy Federico Saez, tengo 37 años y vivo en Cordoba Capital. Me dedico al comercio, tengo una pequeña distribuidora de frutos secos, cereales y demas cosas... Actualmente estoy realizando el curso de Desarrollador Full Stack en Digital House... me interesa el arte en general y la musica... tambien me motivan los emprendimientos.
 - Soy Daniel Morales, tengo 21 años vivo en Santiago de Chile, trabajo como Auxiliar de Aviación, quiero estudiar analista de programador el año que viene, soy apasionado a la calistenia y a los idiomas, juego básquet para la selección de mi ciudad en mis tiempos libres.
 - Soy Martín Abramovich, me dicen Marto. Tengo 21 años, vivo en Capital Federal y estudio Lic. en Análisis de Sistemas en la UBA. Trabajo como freelancer en marketing digital y análisis de datos. Me interesa mucho el desarrollo de software, el campo de UX-UI y la producción y comunicación audiovisual. Me gusta andar en bici y tomar café de especialidad.
+- Soy Cristhian Franco, tengo 35 soy de Colombia. Trabajo como frontend y maquetador web. Tengo 
+experinecia en UI. Me gusta compartir con mi familia, mis perros e ir al gym y me gusta particar boxeo. 
 
 🔗 **Link al tablero de trabajo**:
