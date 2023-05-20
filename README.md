@@ -6,11 +6,7 @@ Vamos a realizar un e-commerce. La idea es crear una tienda online para alguna e
 🧑‍🤝‍🧑**Público objetivo**:
 
 🌐 **Páginas referentes**: 
-https://www.mercadolibre.com.ar/
-https://www.amazon.com/-/es/
-https://ar.ebay.com/
-https://tiendamia.com/ar/
-https://www.dafiti.com.ar/
+https://www.mercadolibre.com.ar/ - https://www.amazon.com/-/es/ - https://ar.ebay.com/ - https://tiendamia.com/ar/ - https://www.dafiti.com.ar/
 
 🎆 **Presentación del grupo de trabajo**:
 
