@@ -1,9 +1,9 @@
-# e-commerce
+# E-Commerce
 ### Proyecto integrador de Digital House - Grupo 5
 
 Vamos a realizar un e-commerce. La idea es crear una tienda online para alguna empresa o tipo de producto a definir.
 
-🧑‍🤝‍🧑**Público objetivo**:
+🧑‍🤝‍🧑**Público objetivo**: Estamos orientados a un público muy abierto sin rango de edades, que esta en busca del mejor costo-beneficio.
 
 🌐 **Páginas referentes**: 
 https://www.mercadolibre.com.ar/ - https://www.amazon.com/-/es/ - https://ar.ebay.com/ - https://tiendamia.com/ar/ - https://www.dafiti.com.ar/
