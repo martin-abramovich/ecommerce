@@ -5,7 +5,12 @@ Vamos a realizar un e-commerce. La idea es crear una tienda online para alguna e
 
 🧑‍🤝‍🧑**Público objetivo**:
 
-🌐 **Páginas referentes**:
+🌐 **Páginas referentes**: 
+https://www.mercadolibre.com.ar/
+https://www.amazon.com/-/es/
+https://ar.ebay.com/
+https://tiendamia.com/ar/
+https://www.dafiti.com.ar/
 
 🎆 **Presentación del grupo de trabajo**:
 
@@ -19,4 +24,4 @@ Vamos a realizar un e-commerce. La idea es crear una tienda online para alguna e
 - Soy Cristhian Franco, tengo 35 soy de Colombia. Trabajo como frontend y maquetador web. Tengo 
 experinecia en UI. Me gusta compartir con mi familia, mis perros e ir al gym y me gusta particar boxeo. 
 
-🔗 **Link al tablero de trabajo**:
+🔗 **Link al tablero de trabajo**: https://trello.com/b/fYfcuKyI
