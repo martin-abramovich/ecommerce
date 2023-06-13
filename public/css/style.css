@@ -1,13 +1,9 @@
-main { 
-    width: 90%;
-    background-color:#ebebeb;
-    margin:auto;
-}
+
 
 .obras-de-arte {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 .obras {
     width: 200px;
