@@ -1,34 +1,9 @@
-
-
-.obras-de-arte {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-.obras {
-    width: 200px;
-    display: block;
-    margin: auto;
-    margin-bottom: 15px;
-    transition: all 450ms;
-}
-
-.foto {
-    width: 500px;
-    height: 350px;
-    
-}
-
-.titulares {
-    font-size: 24px;
-    font-weight: lighter;
+.titulo {
     text-align: center;
-    display: block;
-    margin: auto;
-    margin-bottom: 15px;
 }
-.descripcion {
-    font-size: 16px;
-    margin: 0;
-    display: none;
+.linea {
+    background: black ;
+    height: 5px;
+    width: 100%;
+    display: block;
 }
