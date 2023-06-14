@@ -1,11 +1,19 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+    }
+
 body{
     height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #EEF2FB55, #EEF2FB );
 }
 form{
-    background-color: red;
     padding: 40px 0;
     
 }
@@ -21,18 +29,22 @@ form{
 }
 .form{
     width: 100%;
+    height: 16px;
 }
+
 form .formulario{
     position: relative;
     margin: 45px;
 }
+form .formulario5{
+    text-align: center;
+}
+
 input{
     background: none;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     width: 100%;
-    border: none;
-    border-bottom: 1px solid red;
 }
 button{
     display: flex;
@@ -41,7 +53,15 @@ button{
     margin-left: 148px;
 }
 
+@media (min-width: 768px) {
+    body{
+        height: 650px;
+        display: block;
+        opacity: 1;
+        background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #EEF2FB55, #EEF2FB );
+    }
 
+}
 
 
 
