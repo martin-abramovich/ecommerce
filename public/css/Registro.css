@@ -56,7 +56,8 @@ button{
 @media (min-width: 768px) {
     body{
         height: 650px;
-        display: block;
+        display: flex;
+        justify-content: center;
         opacity: 1;
         background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #EEF2FB55, #EEF2FB );
     }
