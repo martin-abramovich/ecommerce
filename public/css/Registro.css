@@ -1,0 +1,32 @@
+body{
+   
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+}
+.titulo{
+    text-align: center;
+    font-weight: 700;
+}
+section{
+    background-color: aliceblue;
+    padding: 40px 0 ;
+    border-radius: 10px;
+    width: 100%;
+   
+}
+.form{
+    width: 100% ;
+}
+.formulario{
+    position: relative;
+    margin: 45px;
+}
+
+
+
+
+
+
