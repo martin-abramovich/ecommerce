@@ -10,15 +10,18 @@ body{
     align-items: center;
     justify-content: center;
     opacity: 1;
-    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #EEF2FB55, #EEF2FB );
+     
 }
 form{
     padding: 40px 0;
+    
+    
     
 }
 .titulo{
     text-align: center;
     font-weight: 700;
+    margin-top: 105px;
 }
 .sub-titulo{
     text-align: center;
@@ -28,7 +31,7 @@ form{
 }
 .form{
     width: 100%;
-    height: 16px;
+    height: 100%;
 }
 
 form .formulario{
@@ -37,6 +40,7 @@ form .formulario{
 }
 form .formulario5{
     text-align: center;
+    margin-top: 19px;
 }
 
 input{
@@ -51,6 +55,19 @@ button{
     text-align: center;
     margin-left: 148px;
 }
+.col-12{
+    margin-left: 49px;
+}
+.izquierda{
+    display: none;
+}
+section{
+    margin-left: 1px;
+}
+img{
+    margin-left: 1px;
+}
+
 
 @media (min-width: 768px) {
     body{
@@ -58,10 +75,15 @@ button{
         display: flex;
         justify-content: center;
         opacity: 1;
-        background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #EEF2FB55, #EEF2FB );
+       
     }
 
 }
+
+   
+   
+    
+
 
 
 
