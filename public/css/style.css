@@ -16,4 +16,32 @@ img{
     object-fit: cover;
     height: 100%;
     width: 100%;
-  }
+}
+
+.producto {
+    position: relative; /* Establecer la posición relativa para el contenedor */
+}
+
+.producto:hover{
+    box-shadow: 0px 0px 10px  rgb( 100 , 100 , 100 );
+}
+
+.producto:hover img{
+    opacity: 0.1;
+}
+
+.titulo-producto {
+    position: absolute; /* Establecer la posición absoluta para el título */
+    top: 50%; /* Alinear el título en el centro vertical */
+    left: 50%; /* Alinear el título en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centrar el título en el medio */
+   
+    padding: 10px; /* Espaciado interno del título */
+    opacity: 0; /* Ocultar el título por defecto */
+    transition: opacity 0.3s; /* Agregar transición para suavizar la aparición */
+}
+
+.producto:hover .titulo-producto {
+    opacity: 1; /* Mostrar el título al hacer hover en el contenedor */
+    z-index: 1;
+}
