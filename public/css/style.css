@@ -18,6 +18,7 @@ img{
     width: 100%;
 }
 
+
 .producto {
     position: relative; /* Establecer la posición relativa para el contenedor */
 }
@@ -35,7 +36,17 @@ img{
     top: 50%; /* Alinear el título en el centro vertical */
     left: 50%; /* Alinear el título en el centro horizontal */
     transform: translate(-50%, -50%); /* Centrar el título en el medio */
-   
+    font-weight: bold;
+    padding: 10px; /* Espaciado interno del título */
+    opacity: 0; /* Ocultar el título por defecto */
+    transition: opacity 0.3s; /* Agregar transición para suavizar la aparición */
+}
+
+.descripcion-producto{
+    position: absolute; /* Establecer la posición absoluta para el título */
+    top: 80%; /* Alinear el título en el centro vertical */
+    left: 50%; /* Alinear el título en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centrar el título en el medio */
     padding: 10px; /* Espaciado interno del título */
     opacity: 0; /* Ocultar el título por defecto */
     transition: opacity 0.3s; /* Agregar transición para suavizar la aparición */
@@ -44,4 +55,19 @@ img{
 .producto:hover .titulo-producto {
     opacity: 1; /* Mostrar el título al hacer hover en el contenedor */
     z-index: 1;
+}
+
+.producto:hover .descripcion-producto {
+    opacity: 1; /* Mostrar el título al hacer hover en el contenedor */
+    z-index: 1;
+    color: green;
+}
+
+.old-price{
+    text-decoration: line-through;
+}
+
+.list-unstyled{
+    text-decoration: none;
+    color: white;
 }
