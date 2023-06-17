@@ -11,6 +11,8 @@ body{
     justify-content: center;
     opacity: 1;
     background: gray;
+    
+    
 }
 .contenedor{
     margin: 0 auto;
@@ -27,6 +29,7 @@ body{
     background-image: url(../img/4.jpg);
     background-size: cover;
     flex: 0 0 calc(60%);
+    display: none;
 }
 
     .form {
@@ -103,9 +106,15 @@ body{
 
 
 @media(min-width: 768px){
+    body{
+        background-image: url(../img/4.jpg);
+    }
 .imagen-formulario{
     height: auto;
+    display: flex;
+    width: 100%;
 }
+
    
 .contenedor-formulario{
     display: flex;
@@ -120,6 +129,7 @@ body{
         padding: 0 10px;
         margin-top: 116px;
         border: solid 1px gray;
+        background-color: white;
     }
 
     form{
