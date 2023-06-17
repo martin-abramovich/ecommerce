@@ -60,7 +60,6 @@ img{
 .producto:hover .descripcion-producto {
     opacity: 1; /* Mostrar el título al hacer hover en el contenedor */
     z-index: 1;
-    color: green;
 }
 
 .old-price{
@@ -70,4 +69,21 @@ img{
 .list-unstyled{
     text-decoration: none;
     color: white;
+}
+
+.producto-mobile{
+    display: none;
+}
+
+.precio{
+    color: green;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 480px){
+    .producto-mobile{
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+    }
 }
