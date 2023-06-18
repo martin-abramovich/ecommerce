@@ -56,7 +56,7 @@ body{
     }
     .sub-titulo{
         text-align: center;
-        margin-left: 19px;
+        margin-left: -9px;
         margin-right: 3px;
         width: 331px;
     }
@@ -92,7 +92,7 @@ body{
         margin-left: 148px;
     }
     .col-12{
-        margin-left: 49px;
+        margin-left: 12px;
     }
     .izquierda{
         display: none;
