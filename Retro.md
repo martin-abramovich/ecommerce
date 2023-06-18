@@ -1,7 +1,7 @@
 La retrospectiva sobre el Sprint trabajado desde el punto de vista del equipo fue muy positiva.  
 Logramos un buen trabajo en grupo y satisfacción laboral lo cual resultó exitoso y gratificante. 
 Pudimos ser eficientes mediante el trabajo en conjunto y, a su vez, realizar las diferentes tareas complementandonos
-y ayudándonos mediante los conocimientos que cada uno aportó al grupo, y sobre todo con nuevos aprendizajes que obtuvimos
+y ayudándonos mediante los conocimientos que cada uno aportó al grupo y sobre todo con nuevos aprendizajes que obtuvimos
 a medida que se avanzó sobre el sprint.
 La comunicación del equipo fue mejorando siendo constante y efectiva y sumado a la colaboración y el intercambio de ideas 
 aumentó la creatividad y la innovación del equipo.
