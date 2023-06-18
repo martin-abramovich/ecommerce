@@ -56,7 +56,7 @@ body{
     }
     .sub-titulo{
         text-align: center;
-        margin-left: -9px;
+        margin-left: 12px;
         margin-right: 3px;
         width: 331px;
     }
@@ -92,7 +92,7 @@ body{
         margin-left: 148px;
     }
     .col-12{
-        margin-left: 12px;
+        margin-left: 35px;
     }
     .izquierda{
         display: none;
@@ -196,28 +196,4 @@ body{
     }
     
 }    
-
-@media (max-width: 767px) {
-    .contenedor-formulario {
-      flex-direction: column;
-      max-width: 100%;
-    }
-    
-    .imagen-formulario {
-      display: none;
-    }
-    
-    .form {
-      max-width: 100%;
-      
-    }
-    
-    form {
-      max-width: 100%;
-    }
-
-    .form-check {
-        width: fit-content; /* Ajustar el ancho al contenido */
-    }
-  }
   
