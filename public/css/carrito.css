@@ -1,0 +1,29 @@
+  
+  .product-image {
+    flex: 0 0 50%;
+  }
+  
+  .product-description {
+    flex: 0 0 50%;
+    text-align: center;
+  }
+
+  .product-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 120px;
+  }
+  
+  .purchase {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-left: 68%;
+  }
+
+  .boton-purchase{
+    display: flex;
+    padding-left: 69%;
+  }
