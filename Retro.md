@@ -7,5 +7,6 @@ a medida que se avanzó sobre el sprint.
 
 La comunicación del equipo fue mejorando siendo constante y efectiva y sumado a la colaboración y el intercambio de ideas 
 aumentó la creatividad y la innovación del equipo.
+
 En conclusión, a lo largo del Sprint alcanzamos la disposición, flexibilidad y adaptación por parte de todo el grupo a los distintos 
 desafios que fueron surgiendo durante el proceso.
