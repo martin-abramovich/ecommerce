@@ -5,7 +5,7 @@ Pudimos ser eficientes mediante el trabajo en conjunto y, a su vez, realizar las
 y ayudándonos mediante los conocimientos que cada uno aportó al grupo y sobre todo con nuevos aprendizajes que obtuvimos
 a medida que se avanzó sobre el sprint.
 
-La comunicación del equipo fue mejorando siendo constante y efectiva y sumado a la colaboración y el intercambio de ideas 
+La comunicación del equipo fue mejorando siendo constante y efectiva y sumado a la colaboración y al intercambio de ideas 
 aumentó la creatividad y la innovación del equipo.
 
 En conclusión, a lo largo del Sprint alcanzamos la disposición, flexibilidad y adaptación por parte de todo el grupo a los distintos 
