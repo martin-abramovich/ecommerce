@@ -41,6 +41,7 @@ body{
         padding: 0 10px;
         margin-top: 116px;
         border: solid 1px gray;
+        
     }
 
     form{
@@ -56,7 +57,7 @@ body{
     }
     .sub-titulo{
         text-align: center;
-        margin-left: -9px;
+        margin-left: 4px;
         margin-right: 3px;
         width: 331px;
     }
@@ -195,29 +196,4 @@ body{
         margin-left: 1px;
     }
     
-}    
-
-@media (max-width: 767px) {
-    .contenedor-formulario {
-      flex-direction: column;
-      max-width: 100%;
-    }
-    
-    .imagen-formulario {
-      display: none;
-    }
-    
-    .form {
-      max-width: 100%;
-      
-    }
-    
-    form {
-      max-width: 100%;
-    }
-
-    .form-check {
-        width: fit-content; /* Ajustar el ancho al contenido */
-    }
-  }
-  
+}
