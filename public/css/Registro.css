@@ -104,6 +104,8 @@ body{
         margin-left: 1px;
     }
 
+    
+
 
 @media(min-width: 768px){
     body{
@@ -194,3 +196,28 @@ body{
     }
     
 }    
+
+@media (max-width: 767px) {
+    .contenedor-formulario {
+      flex-direction: column;
+      max-width: 100%;
+    }
+    
+    .imagen-formulario {
+      display: none;
+    }
+    
+    .form {
+      max-width: 100%;
+      
+    }
+    
+    form {
+      max-width: 100%;
+    }
+
+    .form-check {
+        width: fit-content; /* Ajustar el ancho al contenido */
+    }
+  }
+  
