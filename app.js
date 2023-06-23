@@ -6,6 +6,9 @@ const path = require("path");
 
 const app = express();
 
+const publicPath = path.resolve(__dirname, "public");
+app.use(express.static(publicPath));
+
 app.use('/', productosRoutes); // se concatenan las rutas del primer y segundo parámetro 
 
 app.use('/users', usersRouters);
@@ -13,9 +16,6 @@ app.use('/users', usersRouters);
 app.use('*', function(req, res) {
   res.send("Error de acceso, esta ruta no existe en el sitio")
 });
-
-const publicPaht = path.resolve(__dirname, "public");
-app.use(express.static(publicPaht));
 
 app.set("view engine","ejs");
 

@@ -2,11 +2,11 @@ const controladorUsers =
 {
 
         iniciarSesion: (req, res) => {
-                res.render("user/login");
+                res.render("login");
         },   
 
         registrarse: (req, res) => {
-                res.render("register");
+                res.render("registro");
         }
 }
 
