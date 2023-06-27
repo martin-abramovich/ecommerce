@@ -5,11 +5,11 @@ const controlador = {
     },
 
     carrito: (req, res) => {
-        res.render('carrito');
+        res.render('products/carrito');
     },
 
     detalle: (req, res) => {
-        res.render('detalle');
+        res.render('products/detalle');
     }
 
 
