@@ -1,18 +1,15 @@
 const controlador = {
-    index: (req, res) => {
+  index: (req, res) => {
+    res.render("index");
+  },
 
-        res.render('index');
-    },
+  carrito: (req, res) => {
+    res.render("products/carrito");
+  },
 
-    carrito: (req, res) => {
-        res.render('products/carrito');
-    },
-
-    detalle: (req, res) => {
-        res.render('products/detalle');
-    }
-
-
-}
+  detalle: (req, res) => {
+    res.render("products/detalle");
+  },
+};
 
 module.exports = controlador;

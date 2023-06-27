@@ -9,7 +9,9 @@ const app = express();
 const publicPath = path.resolve(__dirname, "public");
 app.use(express.static(publicPath));
 
-app.set('views', path.join(__dirname, 'views'))
+app.set("view engine","ejs");
+app.set("views", path.resolve(__dirname, "src", "views"));
+
 app.use('/', productosRoutes); // se concatenan las rutas del primer y segundo parámetro 
 
 app.use('/users', usersRouters);
@@ -18,12 +20,11 @@ app.use('*', function(req, res) {
   res.send("Error de acceso, esta ruta no existe en el sitio")
 });
 
-app.set("view engine","ejs");
-
-app.set("views", path.resolve(__dirname, "src", "views"));
 
 
-app.listen(4000, () => {
-  console.log("Servidor corriendo en puerto 4000");
+const port = 4000
+app.listen(port, () => {
+  console.log("Servidor corriendo en puerto "+ port);
+  console.log("http://localhost:"+ port);
 });
 
