@@ -41,6 +41,7 @@ body{
         padding: 0 10px;
         margin-top: 116px;
         border: solid 1px gray;
+        
     }
 
     form{
@@ -197,3 +198,19 @@ body{
     
 }    
   
+
+
+/* iniciar sesion */
+
+.Rsesion{
+    margin-left: 18px;
+}
+
+.Opass{
+    margin-left: -60px;
+}
+
+.tituloSesion{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

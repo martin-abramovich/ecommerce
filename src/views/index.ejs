@@ -1,94 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://kit.fontawesome.com/c9cf8990b8.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Galante</title>
-  </head>
+
+<%- include('./partials/head.ejs') %>
+
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 fixed-top">
-        <a class="navbar-brand" href="#">Galante</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+   
+<%- include('./partials/header.ejs') %>   
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Inicio <span class="sr-only"></span
-              ></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Quienes somos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contactanos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/registro">Registro</a>
-            </li>
-            <li class="nav-item">
-              <a href=""></a>
-            </li>
-          </ul>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Filtro por productos
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Remera</a></li>
-              <li><a class="dropdown-item" href="#">Pantalones</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Zapatillas</a>
-              </li>
-            </ul>
-          </li>
-        </div>
-
-        <form>
-          <input
-            class="button-dos"
-            type="search"
-            placeholder="Buscar productos"
-          />
-          <button class="btn btn-dark" type="submit">
-            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff"></i>
-          </button>
-        </form>
-        <li class="nav-item">
-          <i class="fas fa-shopping-cart fa-lg mr-3" style="color: #eceff3"></i>
-        </li>
-      </nav>
-    </header>
     <main>
       <div
         id="carouselExampleIndicators"
@@ -295,32 +213,8 @@
         </div>
       </section>
 
-      <footer class="bg-dark text-light text-center">
-        <div class="container py-4">
-          <div class="row">
-            <div class="col-md-6">
-              <h5>Enlaces</h5>
-              <ul class="list-unstyled">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Quienes somos</a></li>
-                <li><a href="#">Contactanos</a></li>
-                <li><a href="/registro">Registro</a></li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <h5>Contacto</h5>
-              <p>Dirección: 123 Calle Principal, Ciudad</p>
-              <p>Teléfono: 123-456-7890</p>
-              <p>Email: tienda@galante.com</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-secondary py-2">
-          <div class="container text-center">
-            <p class="mb-0">© 2023 Galante Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
+  <%- include('./partials/footer.ejs') %>  
+  
     </main>
 
     <script
