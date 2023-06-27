@@ -1,6 +1,5 @@
-const controladorUsers = 
-{
-
+const controladorUsers = {
+        
         iniciarSesion: (req, res) => {
                 res.render("users/login");
         },   

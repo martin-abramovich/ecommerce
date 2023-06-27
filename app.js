@@ -9,7 +9,8 @@ const app = express();
 const publicPath = path.resolve(__dirname, "public");
 app.use(express.static(publicPath));
 
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname,  'src','views'));
+
 app.use('/', productosRoutes); // se concatenan las rutas del primer y segundo parámetro 
 
 app.use('/users', usersRouters);
