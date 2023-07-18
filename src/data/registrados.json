@@ -33,5 +33,12 @@
   "Apellido": "Perez",
   "Email": "hola@hola.com",
   "Password": "$2a$08$48UQo.8QOOpUjcrUQOgKoOMVsvbHXp9nGV.riWTdsjSlq0p5zzPPy"
+ },
+ {
+  "id": 6,
+  "Usuario": "dadead@gmail.com",
+  "Apellido": "Moralees",
+  "Email": "fafafa@gmail.com",
+  "Password": "$2a$08$VR8kPhzuUpZzQkmoEuYHBuXxJu0TcdlBkKROICKhVAUr1xoddx1vK"
  }
 ]
