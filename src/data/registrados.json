@@ -1,0 +1,30 @@
+[
+ {
+  "id": 1,
+  "Usuario": "Daniel",
+  "Apellido": "Olap",
+  "Email": "dadad@gmail.com",
+  "Password": "barka12.."
+ },
+ {
+  "id": 2,
+  "Usuario": "daniel",
+  "Apellido": "morales",
+  "Email": "fafafa@gmail.com",
+  "Password": "daddadad"
+ },
+ {
+  "id": 3,
+  "Usuario": "daniel",
+  "Apellido": "Moralees",
+  "Email": "fafafa@gmail.com",
+  "Password": "$2a$08$4yUPM.OGRqEKx/z8V1S8eeeC7kTxqBf7/ijJC.yaQ7tHcpiYYs6Nu"
+ },
+ {
+  "id": 4,
+  "Usuario": "Richard",
+  "Apellido": "Perez",
+  "Email": "danielmoralese26@gmail.com",
+  "Password": "$2a$08$yeR38SaSPn2YgDUr.942Y.HsyXzyf5Rcze2Pd93.wRw.r7b9.fozq"
+ }
+]
