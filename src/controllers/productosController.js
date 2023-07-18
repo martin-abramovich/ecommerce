@@ -10,6 +10,10 @@ const controlador = {
 
     detalle: (req, res) => {
         res.render('products/detalle');
+    },
+
+    crear: (req, res) => {
+        res.render('products/creacion');
     }
 
 
