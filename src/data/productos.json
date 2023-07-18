@@ -1,44 +1,45 @@
 [
     {
      "id": 1,
-     "titulo": "",
-     "descripcion": "",
-     "imagen": "",
-     "precio": ""
+     "titulo": "Van Gogh",
+     "descripcion": "La fotografía captura la esencia de una obra de arte única y cautivadora. El lienzo, cubierto de pinceladas magistrales, revela una composición vibrante y llena de vida. Los colores brillantes y expresivos dan vida a la escena, creando un impacto visual poderoso. La imagen transmite una sensación de movimiento y energía, como si las pinceladas estuvieran en constante danza sobre la tela.",
+     "imagen": "http://localhost:4000/images/obra-uno.jpg",
+     "precio": "$5000"
     },
     {
-        "id": 1,
-        "titulo": "",
-        "descripcion": "",
-        "imagen": "",
-        "precio": ""
+        "id": 2,
+        "titulo": "Picasso",
+        "descripcion": "Una de las características más destacadas de las obras de Picasso es su enfoque en la representación de la figura humana. Picasso exploró y desafió las convenciones tradicionales de la representación figurativa, creando formas distorsionadas, fragmentadas y abstractas. A través de sus retratos y figuras, Picasso exploró la psicología humana, las emociones y las múltiples facetas de la identidad.",
+        "imagen": "http://localhost:4000/images/obra-dos.jpg",
+        "precio": "$11000"
     },
     {
-        "id": 1,
-        "titulo": "",
-        "descripcion": "",
-        "imagen": "",
-        "precio": ""
+        "id": 3,
+        "titulo": "Monet",
+        "descripcion": "A través de su pintura, Monet busca representar la naturaleza y el mundo que lo rodeaba de una manera más subjetiva y sensorial.",
+        "imagen": "http://localhost:4000/images/obra-tres.jpg",
+        "precio": "$17000"
     },
     {
-        "id": 1,
-        "titulo": "",
-        "descripcion": "",
-        "imagen": "",
-        "precio": ""
+        "id": 4,
+        "titulo": "Da Vinci",
+        "descripcion": "la fotografia representa habilidad técnica, con enfoque detallado y  curiosidad insaciable de Da Vinci una figura icónica y un referente en el mundo del arte y la ciencia.",
+        "imagen": "http://localhost:4000/images/obra-cuatro-jpg.jpeg",
+        "precio": "$21600"
     },
     {
-        "id": 1,
-        "titulo": "",
-        "descripcion": "",
-        "imagen": "",
-        "precio": ""
+        "id": 5,
+        "titulo": "Frida Kahlo",
+        "descripcion": "La obra de Frida Kahlo es conocida por su estilo único y su capacidad para expresar emociones y experiencias personales a través del arte"
+        ,
+        "imagen": "http://localhost:4000/images/obra-cinco.jpg",
+        "precio": "$25200"
     },
     {
-        "id": 1,
-        "titulo": "",
-        "descripcion": "",
-        "imagen": "",
-        "precio": ""
+        "id": 6,
+        "titulo": "Marta Minujín",
+        "descripcion": "en la obra se ha utilizado elementos como el cine, la música pop y los personajes famosos para reflexionar sobre la sociedad contemporánea y la influencia de los medios de comunicación en nuestra vida diaria.",
+        "imagen": "http://localhost:4000/images/obra-seis.jpg",
+        "precio": "$21600"
     }
    ]
