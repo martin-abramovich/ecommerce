@@ -11,8 +11,10 @@ const controlador = {
     detalle: (req, res) => {
         res.render('products/detalle');
     },
-    product: (req,res) =>{
-        res.send("ola")
+
+    crear: (req, res) => {
+        res.render('products/creacion');
+
     }
 
 
