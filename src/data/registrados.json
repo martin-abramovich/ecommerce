@@ -26,5 +26,12 @@
   "Apellido": "Perez",
   "Email": "danielmoralese26@gmail.com",
   "Password": "$2a$08$yeR38SaSPn2YgDUr.942Y.HsyXzyf5Rcze2Pd93.wRw.r7b9.fozq"
+ },
+ {
+  "id": 5,
+  "Usuario": "Juan",
+  "Apellido": "Perez",
+  "Email": "hola@hola.com",
+  "Password": "$2a$08$48UQo.8QOOpUjcrUQOgKoOMVsvbHXp9nGV.riWTdsjSlq0p5zzPPy"
  }
 ]
