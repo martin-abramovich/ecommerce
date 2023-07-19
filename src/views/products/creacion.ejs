@@ -4,13 +4,13 @@
   <%- include('../partials/head.ejs', {title: 'Nuevo producto'}) %>
 
   <body>
-      <%- include('../partials/header.ejs') %>
+     
 
     <main>
-      <form action="nuevoProducto" method="post" class="container" enctype="multipart/form-data">
+      <form action="/crear" method="post" class="container" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="title" class="form-label">Título</label>
-          <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="title" name="titulo" aria-describedby="emailHelp">
         </div>
 
         <div class="input-group mb-3">
