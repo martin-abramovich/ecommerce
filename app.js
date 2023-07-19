@@ -1,6 +1,6 @@
 const productosRoutes = require('./src/routes/productosRoutes');
 const usersRouters = require('./src/routes/usersRouters');
-
+const methodOverride = require("method-override")
 const express = require("express");
 const path = require("path");
 
@@ -9,6 +9,7 @@ const app = express();
 //no tocar, necesario para guardar en el Json
 app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
+app.use(methodOverride('_method'))
 
 const publicPath = path.resolve(__dirname, "public");
 app.use(express.static(publicPath));

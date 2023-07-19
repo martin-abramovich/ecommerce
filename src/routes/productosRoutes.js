@@ -32,5 +32,4 @@ router.post('/crear', upload.single('imagen'), productosController.creados)
 router.get("/edicion/:id", productosController.getUpdateForm);
 router.put("/edicion/:id", upload.single('imagen'), productosController.putUpdateForm);
 
-
 module.exports = router;
