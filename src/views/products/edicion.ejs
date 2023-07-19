@@ -7,7 +7,7 @@
       <%- include('../partials/header.ejs') %>
 
     <main>
-      <form action="/products/edicion/<%= producto.id %>?_method=PUT" method="post" class="container" enctype="multipart/form-data">
+      <form action="/edicion/<%= producto.id %>?_method=PUT" method="post" class="container" enctype="multipart/form-data" style="margin-top: 180px; margin-bottom: 48px;">
         <div class="mb-3">
           <label for="title" class="form-label">Titulo</label>
           <input type="text" class="form-control" id="titulo" name="titulo" aria-describedby="emailHelp" value="<%= producto.titulo %>">
@@ -26,7 +26,7 @@
        
         <div class="mb-3">
           <label for="precio" class="form-label">Precio</label>
-          <input type="number" class="form-control" id="precio" name="precio" aria-describedby="emailHelp" value="<%= producto.precio %>">
+          <input type="text" class="form-control" id="precio" name="precio" aria-describedby="emailHelp" value="<%= producto.precio %>">
         </div>
        
         <button type="submit" class="btn btn-primary">Submit</button>

@@ -77,7 +77,6 @@ const controlador = {
         const producto = productos.find((producto) => producto.id == req.params.id);
         /* si lo encuentra le cambio los valores permitiendo conservar la imagen anterior si no quiere cambiarla */
         if (producto) {
-            console.log("hola");
             producto.titulo = req.body.titulo;
             producto.imagen = req.file ? `/img/${req.file.filename}` : producto.imagen;
             producto.precio = req.body.precio;

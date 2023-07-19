@@ -40,5 +40,12 @@
   "descripcion": "en la obra se ha utilizado elementos como el cine, la música pop y los personajes famosos para reflexionar sobre la sociedad contemporánea y la influencia de los medios de comunicación en nuestra vida diaria.",
   "imagen": "http://localhost:4000/images/obra-seis.jpg",
   "precio": "$21600"
+ },
+ {
+  "id": 7,
+  "titulo": "Manos",
+  "descripcion": "Dos manos!",
+  "precio": "$123",
+  "imagen": "/img/product-1689796861193.webp"
  }
 ]
