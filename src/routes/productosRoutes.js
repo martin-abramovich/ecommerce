@@ -11,6 +11,8 @@ router.get('/carrito', productosController.carrito);
 router.get('/detalle/:id', productosController.detalle);
 
 router.get('/crear', productosController.crear);
+router.post('/crear', productosController.creados)
+
 
 /* form update */
 router.get("/edicion/:id", productosController.getUpdateForm);

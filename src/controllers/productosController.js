@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const productosPath = path.join(__dirname, "../data/productos.json");
+const productos = JSON.parse(fs.readFileSync(productosPath, 'utf-8'));
 
 const controlador = {
     index: function (req, res) {
@@ -32,6 +33,11 @@ const controlador = {
 
     crear: (req, res) => {
         res.render('products/creacion');
+
+    },
+    creados: (req,res) =>{
+        let ola = req.body
+        console.log(ola)
     }
 }
 
