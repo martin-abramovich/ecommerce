@@ -25,7 +25,7 @@ router.get('/carrito', productosController.carrito);
 router.get('/detalle/:id', productosController.detalle);
 
 router.get('/crear', productosController.crear);
-router.post('/crear', productosController.creados)
+router.post('/crear', upload.single('imagen'), productosController.creados)
 
 
 /* form update */
