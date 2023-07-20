@@ -85,6 +85,9 @@
           <a href="/edicion/<%= producto.id %>">
             <button class="btn btn-dark">Editar</button>
           </a>
+          <form action="/delete/<%= producto.id %>?_method=DELETE" method="post">
+            <button type="submit">Eliminar</button>
+          </form>
           </div>
         </div>
       </div>
