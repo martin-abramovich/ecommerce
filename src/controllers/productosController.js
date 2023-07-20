@@ -7,7 +7,7 @@ const controlador = {
     index: function (req, res) {
         /* leo un json y lo parseo */
         const productos = JSON.parse(fs.readFileSync(productosPath, 'utf-8'));
-        res.render("index", {productos});
+        res.render("index", {productos});d
       },
 
     carrito: (req, res) => {
