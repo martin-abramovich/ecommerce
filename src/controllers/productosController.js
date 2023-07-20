@@ -92,6 +92,17 @@ const controlador = {
             </div>
             `);
         }
+      },
+      delete: function(req,res){
+        let productos = JSON.parse(fs.readFileSync(productosPath, "utf-8"));
+        let idproductos = parseInt(req.params.id)
+        productos=productos.filter((i)=>i.id !== idproductos)
+
+        fs.writeFileSync(productosPath, JSON.stringify(productos, null, " "));
+        res.redirect("/");
+
+
+
       }
 }
 
