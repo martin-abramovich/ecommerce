@@ -11,7 +11,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"></link>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>      
-    <title>Formulario Registro</title>
+    <title>Registro | Galante</title>
 </head>
 <body>
  
@@ -19,33 +19,63 @@
     <div class="imagen-formulario">
 
   </div>
-  <form action="/users/registro" method="POST" id="form">
-   
+  <form action="/users/registro" method="POST" id="form" enctype="multipart/form-data">
       <div class="form">
-          <h1 class="titulo"> Bienvenido a Galante</h1>
-          <h3 class="sub-titulo"> Encontrá el arte que amas</h3>
+          <h2 class="titulo">Bienvenido a Galante</h2>
             <div class="formulario">
               <label for="nameInput" class="form-label">Nombre</label>   
-              <input type="text" class="form-control" id="nameInput" name="Usuario" placeholder="Escriba su nombre">
+              <input type="text" class="form-control <%= locals.errors && errors.Usuario ? "is-invalid" : null %>" value="<%= locals.oldData ? oldData.Usuario : null %>" id="nameInput" name="Usuario" placeholder="Escriba su nombre">
+              <% if (locals.errors && errors.Usuario) { %>
+                <div class="text-danger">
+                  <%= errors.Usuario.msg %>
+                </div>
+              <% } %>
             </div>
             <div class="formulario">
               <label for="apellidoInput" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="apellidoInput" name="Apellido" placeholder="Escriba su apellido"> 
+              <input type="text" class="form-control <%= locals.errors && errors.Apellido ? "is-invalid" : null %>" value="<%= locals.oldData ? oldData.Apellido : null %>" id="apellidoInput" name="Apellido" placeholder="Escriba su apellido"> 
+              <% if (locals.errors && errors.Apellido) { %>
+                <div class="text-danger">
+                  <%= errors.Apellido.msg %>
+                </div>
+              <% } %>
             </div>
             <div class="formulario">
                   <label for="emailInput" class="form-label">Direccion de correo electronico</label>
-                  <input type="email" class="form-control" id="emailInput" name="Email" placeholder="nombre@ejemplo.com"> 
+                  <input type="email" class="form-control <%= locals.errors && errors.Email ? "is-invalid" : null %>" value="<%= locals.oldData ? oldData.Email : null %>" id="emailInput" name="Email" placeholder="nombre@ejemplo.com"> 
+                  <% if (locals.errors && errors.Email) { %>
+                    <div class="text-danger">
+                      <%= errors.Email.msg %>
+                    </div>
+                  <% } %>
              </div>
+             <div class="formulario">
+              <label class="emailInput" for="avatar">Foto de perfil</label>
+              <input type="file" class="form-control" id="avatar" name="avatar">
+              <% if (locals.errors && errors.avatar) { %>
+                <div class="text-danger">
+                  <%= errors.avatar.msg %>
+                </div>
+              <% } %>
+            </div>
             <div class="formulario" name="passInput">
                 <label for="passInput" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="passInput" name="Password" placeholder="Escriba su contraseña">
+                <input type="password" class="form-control <%= locals.errors && errors.Password ? "is-invalid" : null %>" value="<%= locals.oldData ? oldData.Password : null %>" id="passInput" name="Password" placeholder="Escriba su contraseña">
+                <% if (locals.errors && errors.Password) { %>
+                  <div class="text-danger">
+                    <%= errors.Password.msg %>
+                  </div>
+                <% } %>
             </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input type="checkbox" id="checkTerms" class="form-check-input" >
-                <label for="checkTerms" class="form-check-label"> Acepto los terminos y condiciones</label>
-              </div>
-            </div>
+            <div class="formulario" name="pass2Input">
+              <label for="pass2Input" class="form-label">Repetir contraseña</label>
+              <input type="password" class="form-control <%= locals.errors && errors.Password2 ? "is-invalid" : null %>" value="<%= locals.oldData ? oldData.Password2 : null %>" id="pass2Input" name="Password2" placeholder="Reingrese su contraseña">
+              <% if (locals.errors && errors.Password2) { %>
+                <div class="text-danger">
+                  <%= errors.Password2.msg %>
+                </div>
+              <% } %>
+          </div>
             <div class="formulario5">
               <button type="submit" class="btn btn-primary"> 
                 Registrate

@@ -137,14 +137,14 @@ body{
 
     form{
    
-        width: 388px;
+        width: 450px;
         height: 840px;
         padding: 20px 0;
     }
     .titulo{
         text-align: center;
         font-weight: 700;
-        margin-top: 10px;
+        margin-top: 30px;
     }
     .sub-titulo{
         text-align: center;
@@ -164,7 +164,7 @@ body{
     
     form .formulario{
         position: relative;
-        margin: 45px;
+        margin: 20px;
     }
     form .formulario5{
         text-align: center;

@@ -1,44 +1,18 @@
 [
  {
   "id": 1,
-  "Usuario": "Daniel",
-  "Apellido": "Olap",
-  "Email": "dadad@gmail.com",
-  "Password": "barka12.."
+  "Usuario": "Eleonora",
+  "Apellido": "Perez",
+  "Email": "eleo@gmail.com",
+  "avatar": "/img/avatars/product-1691365208692.png",
+  "Password": "$2a$08$hVMx3fclY/DlYPkssuf8l.6uHc5k4P15Oh4WfJ8jFLDnxys6.Evhy"
  },
  {
   "id": 2,
-  "Usuario": "daniel",
-  "Apellido": "morales",
-  "Email": "fafafa@gmail.com",
-  "Password": "daddadad"
- },
- {
-  "id": 3,
-  "Usuario": "daniel",
-  "Apellido": "Moralees",
-  "Email": "fafafa@gmail.com",
-  "Password": "$2a$08$4yUPM.OGRqEKx/z8V1S8eeeC7kTxqBf7/ijJC.yaQ7tHcpiYYs6Nu"
- },
- {
-  "id": 4,
-  "Usuario": "Richard",
-  "Apellido": "Perez",
-  "Email": "danielmoralese26@gmail.com",
-  "Password": "$2a$08$yeR38SaSPn2YgDUr.942Y.HsyXzyf5Rcze2Pd93.wRw.r7b9.fozq"
- },
- {
-  "id": 5,
-  "Usuario": "Juan",
-  "Apellido": "Perez",
-  "Email": "hola@hola.com",
-  "Password": "$2a$08$48UQo.8QOOpUjcrUQOgKoOMVsvbHXp9nGV.riWTdsjSlq0p5zzPPy"
- },
- {
-  "id": 6,
-  "Usuario": "dadead@gmail.com",
-  "Apellido": "Moralees",
-  "Email": "fafafa@gmail.com",
-  "Password": "$2a$08$VR8kPhzuUpZzQkmoEuYHBuXxJu0TcdlBkKROICKhVAUr1xoddx1vK"
+  "Usuario": "Tomas",
+  "Apellido": "Bololo",
+  "Email": "tomas@gmail.com",
+  "avatar": "/img/avatars/product-1691365237165.png",
+  "Password": "$2a$08$LT21gbM7Gs0ZzQjEiYs0TO/crGzs4ZofEatj/6Iocp7ooe48274r6"
  }
 ]
