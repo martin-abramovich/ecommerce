@@ -17,7 +17,7 @@ const validations = [
     body('Usuario').notEmpty().withMessage("El nombre no puede estar vacío"),
     body('Apellido').notEmpty().withMessage("El apellido no puede estar vacío"),
     body('Email').notEmpty().withMessage("El email no puede estar vacío").bail().isEmail().withMessage("Formato inválido"),
-    body('Password').notEmpty().withMessage("La contraseña no puede estar vacía"),
+    body('Password').notEmpty().withMessage("La contraseña no puede estar vacía").bail().isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
     body('Password2').notEmpty().withMessage("Verificación de contraseña no puede estar vacía"),
     body('avatar').custom((value, { req }) => {
         let file = req.file;
@@ -40,7 +40,13 @@ const validations = [
         if (emailExists(value)) {
           throw new Error('El correo electrónico ya está registrado');
         }
-      })
+      }),
+    body('Password2').custom((value, { req }) => {
+      if (value !== req.body.Password) {
+        throw new Error('Las contraseñas no coinciden');
+      }
+      return true;
+    })
 ]
 
 /* configuración del almacenamiento de multer */
