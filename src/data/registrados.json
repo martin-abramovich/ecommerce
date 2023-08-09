@@ -14,5 +14,13 @@
   "Email": "tomas@gmail.com",
   "avatar": "/img/avatars/product-1691365237165.png",
   "Password": "$2a$08$LT21gbM7Gs0ZzQjEiYs0TO/crGzs4ZofEatj/6Iocp7ooe48274r6"
+ },
+ {
+  "id": 3,
+  "Usuario": "Tobias",
+  "Apellido": "Perez",
+  "Email": "tobi@perez.com",
+  "avatar": "/img/default-game.jpg",
+  "Password": "$2a$08$QfgHyC3BFhozhOjSNQad1uJYx006GoWr6H.im6poekGQBhGnXZLFi"
  }
 ]

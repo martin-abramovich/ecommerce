@@ -19,33 +19,16 @@ const validations = [
     body('Email').notEmpty().withMessage("El email no puede estar vacío").bail().isEmail().withMessage("Formato inválido"),
     body('Password').notEmpty().withMessage("La contraseña no puede estar vacía").bail().isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
     body('Password2').notEmpty().withMessage("Verificación de contraseña no puede estar vacía"),
-    body('avatar').custom((value, { req }) => {
-        let file = req.file;
-    
-        // Si no se proporciona un archivo, no hay nada que validar
-        if (!file) {
-            return true;
-        }
-    
-        let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-        let fileExtension = path.extname(file.originalname);
-    
-        if (!acceptedExtensions.includes(fileExtension)) {
-            throw new Error(`Formato de imagen inválido. Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-        }
-    
-        return true;
-    }),
     body('Email').custom(async (value) => {
         if (emailExists(value)) {
           throw new Error('El correo electrónico ya está registrado');
         }
-      }),
+    }),
     body('Password2').custom((value, { req }) => {
-      if (value !== req.body.Password) {
-        throw new Error('Las contraseñas no coinciden');
-      }
-      return true;
+        if (value !== req.body.Password) {
+          throw new Error('Las contraseñas no coinciden');
+        }
+        return true;
     })
 ]
 
