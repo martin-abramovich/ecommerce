@@ -11,11 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.40.0",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
     "method-override": "^3.0.0",
     "moment": "^2.29.4",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "streamifier": "^0.1.1"
   }
 }

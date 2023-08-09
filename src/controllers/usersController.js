@@ -4,6 +4,15 @@ const registeredFilePath = path.join(__dirname, '../data/registrados.json');
 const registered = JSON.parse(fs.readFileSync(registeredFilePath, 'utf-8'));
 const bcrypt = require('bcryptjs') // es lo que usaremos para incriptar la contraseña
 const {validationResult} = require('express-validator');
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier');
+
+cloudinary.config({ 
+        cloud_name: 'dgmxc8fal', 
+        api_key: '658928733417987', 
+        api_secret: 'CYEYZept3jVWxd829y_AsxNsp1E' 
+});
+
 
 //TODO: Encriptamos!!
 const encrypt = async (textPlain) => { 
@@ -42,14 +51,28 @@ const controladorUsers = {
                
                const {Password} = req.body //creamos una constante con el dato o datos que quiera incriptar
                const Passwordhash = await encrypt(Password) //a esa constante la llamamos junto al hash y con (await encrypt(variable) la incriptamos)
+
+               const imageBuffer = req.file.buffer;
+               const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+               const customFilename = 'avatar' + uniqueSuffix;
+               const folder = 'ecommerce_dh/avatars';
                
+               const stream = cloudinary.uploader.upload_stream({ resource_type: 'image', folder: folder, public_id: customFilename }, (error, result) => {
+                if (error) {
+                        console.error ('Error during upload: ', error);
+                } else {
+                        console.log('Upload successful: ', result);
+                }
+               });
+
+               streamifier.createReadStream(imageBuffer).pipe(stream);
 
                let ObjRegistrados = {
                 id: idRegistrados,
                 Usuario: registrados.Usuario,
                 Apellido: registrados.Apellido,
                 Email: registrados.Email,
-                avatar: req.file ? `/img/avatars/${req.file.filename}`: "/img/default-game.jpg",
+                avatar: req.file ? `https://res.cloudinary.com/dgmxc8fal/image/upload/ecommerce_dh/avatars/${customFilename}`: "/img/default-avatar.png",
                 Password: Passwordhash
                }
 

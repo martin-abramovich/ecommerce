@@ -32,19 +32,7 @@ const validations = [
     })
 ]
 
-/* configuración del almacenamiento de multer */
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname,'../../public/img/avatars'));
-    },
-      filename: function (req, file, cb) {
-        console.log(path.extname(file.originalname))
-        const uniqueSuffix = Date.now();
-      cb(null, "product-" + uniqueSuffix + path.extname(file.originalname));
-    },
-  });
-
-const upload = multer({ storage: storage });
+const upload = multer();
 
 router.get('/registro',usersController.registrarse);
 router.post('/registro', upload.single('avatar'), validations, usersController.create);
