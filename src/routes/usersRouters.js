@@ -39,5 +39,7 @@ router.post('/registro', upload.single('avatar'), validations, usersController.c
 
 router.get('/login',usersController.iniciarSesion);
 
+router.post('/login',usersController.inicio)
+
 
 module.exports = router;

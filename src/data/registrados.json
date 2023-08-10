@@ -6,5 +6,13 @@
   "Email": "eleo@gmail.com",
   "avatar": "/img/avatars/default-avatar.png",
   "Password": "$2a$08$hVMx3fclY/DlYPkssuf8l.6uHc5k4P15Oh4WfJ8jFLDnxys6.Evhy"
+ },
+ {
+  "id": 2,
+  "Usuario": "daniel",
+  "Apellido": "Moralees",
+  "Email": "danielmoralese62@gmail.com",
+  "avatar": "https://res.cloudinary.com/dgmxc8fal/image/upload/ecommerce_dh/avatars/avatar1691697515802-788994658",
+  "Password": "$2a$08$/IfJeew2KZXhd3Qv4NN9mu7FY8HgQ5fnTBjsn/bqusrUNueA/nF2G"
  }
 ]

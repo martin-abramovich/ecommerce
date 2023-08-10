@@ -6,6 +6,19 @@ const bcrypt = require('bcryptjs') // es lo que usaremos para incriptar la contr
 const {validationResult} = require('express-validator');
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
+const jwt = require("jsonwebtoken")
+const users = require('../data/registrados.json')
+const usuariosPath = path.join(__dirname, '../data/registrados.json');
+const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
+
+
+
+const secretKey = 'Mi Llave Ultra Secreta'
+const token = jwt.sign(usuarios[0], secretKey)
+
+
+
+
 
 cloudinary.config({ 
         cloud_name: 'dgmxc8fal', 
@@ -81,6 +94,32 @@ const controladorUsers = {
 
                res.redirect('/')
         },
+        inicio: (req,res)=>{
+
+                const { Email, Password } = req.query;
+                const user = usuarios.find((i) => i.Email == Email && i.Password == Password);
+
+                
+
+                if (user) {
+
+                        const token = jwt.sign({
+                                exp: Math.floor(Date.now() / 1000) + 10,
+                                data: user,
+                            },
+                            secretKey
+                        );
+                
+                        res.send("ola")
+                           
+                    } else {
+                        res.send("Usuario o contraseña incorrecta");
+                    }
+                  
+
+               
+                
+        }
 
  }
        
