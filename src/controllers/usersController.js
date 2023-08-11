@@ -90,7 +90,7 @@ const controladorUsers = {
                 secretKey
             );
     
-            res.send("Sesión iniciada correctamente");
+            res.redirect("/");
         } else {
             res.send("Usuario o contraseña incorrecta");
         }

@@ -54,5 +54,13 @@
   "Email": "tomas@gmail.com",
   "avatar": "/img/default-avatar.png",
   "Password": "$2a$08$lbKpeATpU4mlVa2J7YxEcuof3wcCvXGmQvbCJOT7pHUXiRq8ya1OO"
+ },
+ {
+  "id": 8,
+  "Usuario": "daniel",
+  "Apellido": "Moralees",
+  "Email": "danielmoralese26@gmail.com",
+  "avatar": "/img/default-avatar.png",
+  "Password": "$2a$08$6jpHYS.ctUuFRoQBlRodl.iQArWTZ62MJfyqacI2Sn0dl3gleu136"
  }
 ]
