@@ -129,9 +129,6 @@ const controladorUsers = {
                     } else {
                         res.send("Usuario o contraseña incorrecta");
                     }
-              
-
-               
                 
         }
 

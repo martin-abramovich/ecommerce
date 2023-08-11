@@ -7,8 +7,6 @@ const path = require("path");
 const { body, check } = require("express-validator");
 const fs = require('fs');
 
-
-
 const usuariosPath = path.join(__dirname, '../data/registrados.json');
 function emailExists(Email) {
     const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
@@ -54,8 +52,9 @@ router.get('/check', function(req,res){
     res.send("No estas logueado");
   }
   else {
-    res.send("Datos del usuario logueado: " + req.sessio.usuarioLogueado.Email);
+    res.send("Datos del usuario logueado: " + req.session.usuarioLogueado.Email);
   }
+  
 })
 
 
