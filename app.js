@@ -4,7 +4,6 @@ const methodOverride = require("method-override")
 const express = require("express");
 const path = require("path");
 const logMiddleware =require('./middlewares/logMiddleware');
-const session =require('express-session')
 
 
 const app = express();
