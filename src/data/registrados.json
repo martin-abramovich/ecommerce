@@ -25,10 +25,34 @@
  },
  {
   "id": 4,
-  "Usuario": "Colo",
-  "Apellido": "Lolo",
-  "Email": "colo@lolo.com",
+  "Usuario": "Tomas",
+  "Apellido": "alabama",
+  "Email": "tobi@gmail.com",
   "avatar": "/img/default-avatar.png",
-  "Password": "$2a$08$tupsGIJ5QVVezmO6KJAK7efhI9C51A.ihbDsNODo/jrLzH/tHwIYy"
+  "Password": "$2a$08$UAXlxRPDHzVRsRjQnC3KcejgPDqlZbOeOrtj.sFiUhuN63swE3ycG"
+ },
+ {
+  "id": 5,
+  "Usuario": "marto",
+  "Apellido": "abra",
+  "Email": "marto@abra.com",
+  "avatar": "/img/default-avatar.png",
+  "Password": "$2a$08$xsawmMViR4WuPAeNscrXNOaYYvwWHotbPr04kKcBsmSbpBN/BL.fK"
+ },
+ {
+  "id": 6,
+  "Usuario": "Valen",
+  "Apellido": "Ola",
+  "Email": "valen@ola.com",
+  "avatar": "/img/default-avatar.png",
+  "Password": "$2a$08$lLkekFfamYCRy3LRzbkTR.2XNtTz.SR.516Q4Ydi9CBCrmMwFU8I2"
+ },
+ {
+  "id": 7,
+  "Usuario": "Tomas",
+  "Apellido": "Olmo",
+  "Email": "tomas@gmail.com",
+  "avatar": "/img/default-avatar.png",
+  "Password": "$2a$08$lbKpeATpU4mlVa2J7YxEcuof3wcCvXGmQvbCJOT7pHUXiRq8ya1OO"
  }
 ]

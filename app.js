@@ -3,8 +3,7 @@ const usersRouters = require('./src/routes/usersRouters');
 const methodOverride = require("method-override")
 const express = require("express");
 const path = require("path");
-const logMiddleware =require('./middlewares/logMiddleware');
-
+const logMiddleware = require('./middlewares/logMiddleware');
 
 const app = express();
 
@@ -28,8 +27,6 @@ app.use(logMiddleware);
 app.use('*', function(req, res) {
   res.send("Error de acceso, esta ruta no existe en el sitio")
 });
-
-app.use(session({secret:'guardar info'}));
 
 app.listen(4000, () => {
   console.log("Servidor corriendo en puerto 4000");
