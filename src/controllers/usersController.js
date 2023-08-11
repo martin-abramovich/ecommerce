@@ -10,15 +10,8 @@ const jwt = require("jsonwebtoken")
 const users = require('../data/registrados.json')
 const usuariosPath = path.join(__dirname, '../data/registrados.json');
 const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
-
-
-
 const secretKey = 'Mi Llave Ultra Secreta'
 const token = jwt.sign(usuarios[0], secretKey)
-
-
-
-
 
 cloudinary.config({ 
         cloud_name: 'dgmxc8fal', 
@@ -61,25 +54,26 @@ const controladorUsers = {
                 idRegistrados = 1;
                }
                
-               
                const {Password} = req.body //creamos una constante con el dato o datos que quiera incriptar
                const Passwordhash = await encrypt(Password) //a esa constante la llamamos junto al hash y con (await encrypt(variable) la incriptamos)
 
-               const imageBuffer = req.file.buffer;
-               const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-               const customFilename = 'avatar' + uniqueSuffix;
-               const folder = 'ecommerce_dh/avatars';
+               if (req.file) {
+                const imageBuffer = req.file.buffer;
+                const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+                const customFilename = 'avatar' + uniqueSuffix;
+                const folder = 'ecommerce_dh/avatars';
+                
+                const stream = cloudinary.uploader.upload_stream({ resource_type: 'image', folder: folder, public_id: customFilename }, (error, result) => {
+                 if (error) {
+                         console.error ('Error during upload: ', error);
+                 } else {
+                         console.log('Upload successful: ', result);
+                 }
+                });
+ 
+                streamifier.createReadStream(imageBuffer).pipe(stream);
+               }
                
-               const stream = cloudinary.uploader.upload_stream({ resource_type: 'image', folder: folder, public_id: customFilename }, (error, result) => {
-                if (error) {
-                        console.error ('Error during upload: ', error);
-                } else {
-                        console.log('Upload successful: ', result);
-                }
-               });
-
-               streamifier.createReadStream(imageBuffer).pipe(stream);
-
                let ObjRegistrados = {
                 id: idRegistrados,
                 Usuario: registrados.Usuario,

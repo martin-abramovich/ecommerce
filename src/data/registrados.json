@@ -14,5 +14,21 @@
   "Email": "danielmoralese62@gmail.com",
   "avatar": "https://res.cloudinary.com/dgmxc8fal/image/upload/ecommerce_dh/avatars/avatar1691697515802-788994658",
   "Password": "$2a$08$/IfJeew2KZXhd3Qv4NN9mu7FY8HgQ5fnTBjsn/bqusrUNueA/nF2G"
+ },
+ {
+  "id": 3,
+  "Usuario": "Eleonora",
+  "Apellido": "Perez",
+  "Email": "tobi@perez.com",
+  "avatar": "https://res.cloudinary.com/dgmxc8fal/image/upload/ecommerce_dh/avatars/avatar1691778039665-727456719",
+  "Password": "$2a$08$udMD0c7dAvY6dj0vhQlQR.6kcG/p.LdlepcXYzQQ05l9tpVR70MH."
+ },
+ {
+  "id": 4,
+  "Usuario": "Colo",
+  "Apellido": "Lolo",
+  "Email": "colo@lolo.com",
+  "avatar": "/img/default-avatar.png",
+  "Password": "$2a$08$tupsGIJ5QVVezmO6KJAK7efhI9C51A.ihbDsNODo/jrLzH/tHwIYy"
  }
 ]
