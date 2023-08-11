@@ -95,7 +95,27 @@ const controladorUsers = {
                res.redirect('/')
         },
         inicio: (req,res)=>{
+                const errors = validationResult(req);
+                if (errors.isEmpty()) {}//users JSON//
 
+                for (let i=0;i<users.length;i++){
+                        if (users[i].Email == req.body.Email){
+                                if (bcrypt.compareSync(req.body.Password, users[i].Password)){
+                                        let usuarioALoguearse = users[i];
+                                        break;
+                                }
+                        }
+                }
+                if (usuarioALoguearse == undefined){
+                        return res.render('inico', {errors: 
+                        [{msg:'credenciales invalidas'}]})
+
+                }
+               else {
+                        return res.render('inico', {errors: errors.errors});
+                }
+                req.session.usuarioLogueado = usuarioALoguearse;
+                 
                 const { Email, Password } = req.query;
                 const user = usuarios.find((i) => i.Email == Email && i.Password == Password);
 
@@ -115,7 +135,7 @@ const controladorUsers = {
                     } else {
                         res.send("Usuario o contraseña incorrecta");
                     }
-                  
+              
 
                
                 
