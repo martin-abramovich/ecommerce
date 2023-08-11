@@ -6,7 +6,7 @@ const multer = require("multer");
 const path = require("path");
 const { body, check } = require("express-validator");
 const fs = require('fs');
-const logDBMiddleware= require('../middlewares/logDBMiddleware');
+
 
 
 const usuariosPath = path.join(__dirname, '../data/registrados.json');
@@ -37,7 +37,7 @@ const validations = [
 const upload = multer();
 
 router.get('/registro' , usersController.registrarse);
-router.post('/registro', logDBMiddleware, upload.single('avatar'), validations, usersController.create);
+router.post('/registro', upload.single('avatar'), validations, usersController.create);
 
 
 
