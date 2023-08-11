@@ -24,23 +24,38 @@
         <h1 class="tituloSesion text-center">¡Hola! nos alegra <br> verte de nuevo</h1>  
         <br>
           <h4 class="titulo">Inicia sesión</h4>
+          <% if (locals) { %>
+            <div class="text-danger m-4">
+              <%= locals.mensaje %>
+            </div>
+          <% } %>
             <div class="formulario">
                   <label for="emailInput" class="form-label">Direccion de correo electronico</label>
                   <input type="email" class="form-control" id="emailInput" name="email" placeholder="nombre@ejemplo.com"> 
+                  <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger mt-2">
+                      <%= errors.email.msg %>
+                    </div>
+                  <% } %>
              </div>
             <div class="formulario">
                 <label for="passInput" class="form-label">Contraseña</label>
                 <input type="password" class="form-control" id="passInput" name="password" placeholder="Escriba su contraseña">
+                <% if (locals.errors && errors.password) { %>
+                  <div class="text-danger mt-2">
+                    <%= errors.password.msg %>
+                  </div>
+                <% } %>
             </div>
             <div class="col-12">
-              <div class="form-check Rsesion">
+              <div class="form-check">
                 <input type="checkbox" id="checkTerms" class="form-check-input" >
-                <label for="checkTerms" class="form-check-label"><a href="#">Recordar sesión</a></label>
+                <label for="checkTerms" class="form-check-label">Recordar sesión</label>
               </div>
             </div>
             <div class="formulario5">
               <button type="submit" class="btn btn-primary"> 
-                Inicar sesíon 
+                Inicar sesión 
               </button>
             </div>
             <div class="col-12">

@@ -30,7 +30,7 @@ const controladorUsers = {
         res.render("users/registro");
     },
     create: async (req, res) => {
-        const resultValidation = validationResult(req);
+        let resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             return res.render("users/registro", {
                 errors: resultValidation.mapped(),
@@ -78,6 +78,14 @@ const controladorUsers = {
         res.redirect('/');
     },
     inicio: (req, res) => {
+        let resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render("users/login", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+
         const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
         const { email, password } = req.body;
         const user = usuarios.find((i) => i.Email == email);
@@ -92,7 +100,10 @@ const controladorUsers = {
     
             res.send("Sesión iniciada correctamente");
         } else {
-            res.send("Usuario o contraseña incorrecta");
+            return res.render("users/login", {
+                mensaje: "Usuario o contraseña incorrecta",
+                oldData: req.body
+            });
         }
     }
 };
