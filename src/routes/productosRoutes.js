@@ -33,6 +33,8 @@ router.get("/edicion/:id", productosController.getUpdateForm);
 router.put("/edicion/:id", upload.single('imagen'), productosController.putUpdateForm);
 
 router.delete("/delete/:id", productosController.delete);
+
+
   
 
 

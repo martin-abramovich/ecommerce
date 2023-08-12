@@ -5,6 +5,8 @@ const { validationResult } = require('express-validator');
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
 const jwt = require("jsonwebtoken");
+const { log } = require('console');
+const session = require('express-session');
 
 const registeredFilePath = path.join(__dirname, '../data/registrados.json');
 const usuariosPath = path.join(__dirname, '../data/registrados.json');
@@ -24,6 +26,7 @@ const encrypt = async (textPlain) => {
 
 const controladorUsers = {
     iniciarSesion: (req, res) => {
+        
         res.render("users/login");
     },
     registrarse: (req, res) => {
@@ -80,7 +83,7 @@ const controladorUsers = {
     inicio: (req, res) => {
         const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
         const { email, password } = req.body;
-        const user = usuarios.find((i) => i.Email == email);
+        const user = usuarios.find((i) => i.Email == email)
     
         if (user && bcrypt.compareSync(password, user.Password)) {
             const token = jwt.sign({
@@ -94,7 +97,13 @@ const controladorUsers = {
         } else {
             res.send("Usuario o contraseña incorrecta");
         }
-    }
+
+        req.session = user
+
+        console.log(req.session)
+    },
+  
+    
 };
 
 module.exports = controladorUsers;

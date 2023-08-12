@@ -2,10 +2,18 @@ const productosRoutes = require('./src/routes/productosRoutes');
 const usersRouters = require('./src/routes/usersRouters');
 const methodOverride = require("method-override")
 const express = require("express");
+const session = require("express-session"); 
 const path = require("path");
 const logMiddleware = require('./middlewares/logMiddleware');
 
 const app = express();
+
+app.use(session({
+  secret: 'si',
+  resave: false,
+  saveUninitialized: false
+
+}))
 
 //no tocar, necesario para guardar en el Json
 app.use(express.urlencoded({ extended: false}))
