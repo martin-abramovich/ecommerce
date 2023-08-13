@@ -1,110 +1,96 @@
 const fs = require('fs');
 const path = require('path');
-const productosPath = path.join(__dirname, "../data/productos.json");
-const productos = JSON.parse(fs.readFileSync(productosPath, 'utf-8'));
+const productosPath = path.join(__dirname, '../data/productos.json');
+
+function readProductos() {
+    const data = fs.readFileSync(productosPath, 'utf-8');
+    return JSON.parse(data);
+}
+
+function writeProductos(productos) {
+    fs.writeFileSync(productosPath, JSON.stringify(productos, null, ' '));
+}
 
 const controlador = {
     index: function (req, res) {
-        /* leo un json y lo parseo */
-        const productos = JSON.parse(fs.readFileSync(productosPath, 'utf-8'));
-        res.render("index", {productos});
-      },
+        const productos = readProductos();
+        res.render('index', { productos });
+    },
 
     carrito: (req, res) => {
         res.render('products/carrito');
     },
 
-    detalle: (req, res) => {
-        /* leo un json y lo parseo */
-        const productos = JSON.parse(fs.readFileSync(productosPath, "utf-8"));
-        /* busco producto en base al req.params si existe renderizo la vista con el producto, sino un error */
+    detalle: function (req, res) {
+        const productos = readProductos();
         const producto = productos.find((producto) => producto.id == req.params.id);
         if (producto) {
-            res.render("products/detalle", { producto });
+            res.render('products/detalle', { producto });
         } else {
             res.send(`
-                    <div style="text-align: center; padding-top:30px">
-                    <h1>El producto no existe</h1>
-                    <img style="width:40%;" src="/img/default-game.jpg">
-                    </div>
-                    `);
-            }
+                <div style="text-align: center; padding-top:30px">
+                <h1>El producto no existe</h1>
+                <img style="width:40%;" src="/img/default-game.jpg">
+                </div>
+            `);
+        }
     },
     crear: (req, res) => {
         res.render('products/creacion');
     },
-    creados: (req,res) =>{
-        /* leo un json y lo parseo */
-        const productos = JSON.parse(fs.readFileSync(productosPath, "utf-8"));
-        /* creo una variable para generar el nuevo producto del req.body */
-        let nuevoProducto = {
-          id: (productos[productos.length-1].id)+1,
-          titulo: req.body.titulo,
-          descripcion: req.body.descripcion,
-          precio: req.body.precio,
-          /* if ternario para preguntar si viene imagen que la escriba, sino que se quede con la por default */
-          imagen: req.file
-            ? `/img/${req.file.filename}`
-            : "/img/default-game.jpg",
+    creados: function (req, res) {
+        const productos = readProductos();
+        const nuevoProducto = {
+            id: productos[productos.length - 1].id + 1,
+            titulo: req.body.titulo,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            imagen: req.file ? `/img/${req.file.filename}` : '/img/default-game.jpg',
         };
-        /* agrego ese producto al listado */
         productos.push(nuevoProducto);
-        /* convierto a json nuevamente y escribo el archivo games.json */
-        const productosJSON = JSON.stringify(productos, null, " ");
-        fs.writeFileSync(productosPath, productosJSON);
-        res.redirect("/");
+        writeProductos(productos);
+        res.redirect('/');
     },
     getUpdateForm: function (req, res) {
-        /* traigo el listado de productos para filtrar por el req.params */
-        const productos = JSON.parse(fs.readFileSync(productosPath, "utf-8"));
+        const productos = readProductos();
         const producto = productos.find((producto) => producto.id == req.params.id);
-        /* si lo encuentra que me muestre la vista sino que me muestre un error */
         if (producto) {
-          res.render("products/edicion", { producto });
+            res.render('products/edicion', { producto });
         } else {
-          res.send(`
+            res.send(`
                 <div style="text-align: center; padding-top:30px">
                 <h1>El producto a editar no existe</h1>
                 <img style="width:40%;" src="/img/default-game.jpg">
                 </div>
-                `);
+            `);
         }
-      },
-      /* proceso de edición de producto */
-      putUpdateForm: function (req, res) {
-        /* busco el producto a editar  */
-        const productos = JSON.parse(fs.readFileSync(productosPath, "utf-8"));
+    },
+    putUpdateForm: function (req, res) {
+        const productos = readProductos();
         const producto = productos.find((producto) => producto.id == req.params.id);
-        /* si lo encuentra le cambio los valores permitiendo conservar la imagen anterior si no quiere cambiarla */
         if (producto) {
             producto.titulo = req.body.titulo;
             producto.imagen = req.file ? `/img/${req.file.filename}` : producto.imagen;
             producto.precio = req.body.precio;
             producto.descripcion = req.body.descripcion;
-            /* escribo el json nuevamente y redirecciono */
-            fs.writeFileSync(productosPath, JSON.stringify(productos, null, " "));
-            res.redirect("/");
+            writeProductos(productos);
+            res.redirect('/');
         } else {
             res.send(`
-            <div style="text-align: center; padding-top:30px">
-            <h1>El producto no se puede editar</h1>
-            <img style="width:40%;" src="/img/default-game.jpg">
-            </div>
+                <div style="text-align: center; padding-top:30px">
+                <h1>El producto no se puede editar</h1>
+                <img style="width:40%;" src="/img/default-game.jpg">
+                </div>
             `);
         }
-      },
-      delete: function(req,res){
-        let productos = JSON.parse(fs.readFileSync(productosPath, "utf-8"));
-        let idproductos = parseInt(req.params.id)
-        productos=productos.filter((i)=>i.id !== idproductos)
-
-        fs.writeFileSync(productosPath, JSON.stringify(productos, null, " "));
-        res.redirect("/");
-
-
-
-      },
-  
-}
+    },
+    delete: function (req, res) {
+        let productos = readProductos();
+        const idproductos = parseInt(req.params.id);
+        productos = productos.filter((i) => i.id !== idproductos);
+        writeProductos(productos);
+        res.redirect('/');
+    },
+};
 
 module.exports = controlador;

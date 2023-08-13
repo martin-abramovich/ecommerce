@@ -1,216 +1,159 @@
-*{
-    margin:0;
+/* Reset y estilos base */
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
-    }
-body{
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Estilos generales del body */
+  body {
     height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 1;
     background: gray;
-    
-    
-}
-.contenedor{
+    opacity: 1;
+  }
+  
+  /* Contenedores y dimensiones */
+  .contenedor {
     margin: 0 auto;
     max-width: 1200px;
     width: 95%;
     height: 137%;
-}
-
-.contenedor-formulario{
+  }
+  
+  .contenedor-formulario {
     display: flex;
-}
-
-.imagen-formulario{
-    
+  }
+  
+  .imagen-formulario {
     background-size: cover;
     flex: 0 0 calc(60%);
     display: none;
-}
-
-    .form {
-        width: 100%;
-        height: 95%;
-        margin-right: 10px;
-        margin: auto;
-        border-radius: 15px;
-        padding: 0 10px;
-        margin-top: 116px;
-        border: solid 1px gray;
-        
-    }
-
-    form{
-   
-        width: 388px;
-        height: 840px;
-        padding: 20px 0;
-    }
-    .titulo{
-        text-align: center;
-        font-weight: 700;
-        margin-top: 10px;
-    }
-    .sub-titulo{
-        text-align: center;
-        margin-left: 12px;
-        margin-right: 3px;
-        width: 331px;
-    }
-    .form{
-        width: 100%;
-        margin-right: 10px;
-        margin: auto;
-        border-radius: 15px;
-        padding: 0 10px;
-        margin-top: 116px;
-        
-    }
-    
-    form .formulario{
-        position: relative;
-        margin: 45px;
-    }
-    form .formulario5{
-        text-align: center;
-        margin-top: 19px;
-    }
-    
-    input{
-        background: none;
-        font-size: 18px;
-        padding: 10px 10px 10px 5px;
-        width: 100%;
-    }
-    button{
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-left: 148px;
-    }
-    .col-12{
-        margin-left: 35px;
-    }
-    .izquierda{
-        display: none;
-    }
-    section{
-        margin-left: 1px;
-    }
-    img{
-        margin-left: 1px;
-    }
-
-    
-
-
-@media(min-width: 768px){
-    body{
-        background-image: url(../img/4.jpg);
-    }
-.imagen-formulario{
-    height: auto;
-    display: flex;
-    width: 100%;
-}
-
-   
-.contenedor-formulario{
-    display: flex;
-}       
-
-.form {
-        width: 100%;
-        height: 95%;
-        margin-right: 10px;
-        margin: auto;
-        border-radius: 15px;
-        padding: 0 10px;
-        margin-top: 116px;
-        border: solid 1px gray;
-        background-color: white;
-    }
-
-    form{
-   
-        width: 450px;
-        height: 840px;
-        padding: 20px 0;
-    }
-    .titulo{
-        text-align: center;
-        font-weight: 700;
-        margin-top: 30px;
-    }
-    .sub-titulo{
-        text-align: center;
-        margin-left: 19px;
-        margin-right: 3px;
-        width: 331px;
-    }
-    .form{
-        width: 100%;
-        margin-right: 10px;
-        margin: auto;
-        border-radius: 15px;
-        padding: 0 10px;
-        margin-top: 116px;
-        
-    }
-    
-    form .formulario{
-        position: relative;
-        margin: 20px;
-    }
-    form .formulario5{
-        text-align: center;
-        margin-top: 19px;
-    }
-    
-    input{
-        background: none;
-        font-size: 18px;
-        padding: 10px 10px 10px 5px;
-        width: 100%;
-    }
-    button{
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-left: 148px;
-    }
-    .col-12{
-        margin-left: 30px;
-    }
-    .izquierda{
-        display: none;
-    }
-    section{
-        margin-left: 1px;
-    }
-    img{
-        margin-left: 1px;
-    }
-    
-}    
+  }
   
-
-
-/* iniciar sesion */
-
-.Rsesion{
-    margin-left: 18px;
-}
-
-.Opass{
-    margin-left: -60px;
-}
-
-.tituloSesion{
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
+  /* Formularios */
+  .form {
+    width: 100%;
+    margin-right: 10px;
+    margin: auto;
+    border-radius: 15px;
+    padding: 0 10px;
+    margin-top: 116px;
+    border: solid 1px gray;
+    background-color: white;
+  }
+  
+  form {
+    width: 388px;
+    height: 840px;
+    padding: 20px 0;
+  }
+  
+  .formulario {
+    position: relative;
+    margin: 45px;
+  }
+  
+  .formulario5 {
+    text-align: center;
+    margin-top: 19px;
+  }
+  
+  /* Elementos de formulario */
+  input {
+    background: none;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    width: 100%;
+  }
+  
+  button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 148px;
+  }
+  
+  .col-12 {
+    margin-left: 35px;
+  }
+  
+  /* Secciones */
+  .izquierda {
+    display: none;
+  }
+  
+  section {
+    margin-left: 1px;
+  }
+  
+  img {
+    margin-left: 1px;
+  }
+  
+  /* Media Query */
+  @media (min-width: 768px) {
+    body {
+      background-image: url(../img/4.jpg);
+    }
+  
+    .imagen-formulario {
+      height: auto;
+      display: flex;
+      width: 100%;
+    }
+  
+    .contenedor-formulario {
+      display: flex;
+    }
+  
+    .form {
+      width: 100%;
+      height: 95%;
+      margin-right: 10px;
+      margin: auto;
+      border-radius: 15px;
+      padding: 0 10px;
+      margin-top: 116px;
+      border: solid 1px gray;
+      background-color: white;
+    }
+  
+    form {
+      width: 450px;
+      height: 840px;
+      padding: 20px 0;
+    }
+  
+    .titulo {
+      text-align: center;
+      font-weight: 700;
+      margin-top: 30px;
+    }
+  
+    .sub-titulo {
+      text-align: center;
+      margin-left: 19px;
+      margin-right: 3px;
+      width: 331px;
+    }
+  
+    .formulario {
+      position: relative;
+      margin: 20px;
+    }
+  
+    .formulario5 {
+      text-align: center;
+      margin-top: 19px;
+    }
+  
+    .col-12 {
+      margin-left: 30px;
+    }
+  
+    /* Otros estilos específicos de la media query si es necesario */
+  }  

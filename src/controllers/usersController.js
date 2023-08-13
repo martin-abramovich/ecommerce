@@ -5,43 +5,48 @@ const { validationResult } = require('express-validator');
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
 const jwt = require("jsonwebtoken");
-const { log } = require('console');
 const session = require('express-session');
 
 const registeredFilePath = path.join(__dirname, '../data/registrados.json');
-const usuariosPath = path.join(__dirname, '../data/registrados.json');
 const secretKey = 'Mi Llave Ultra Secreta';
-
-const cloudinaryConfig = { 
-    cloud_name: 'dgmxc8fal', 
-    api_key: '658928733417987', 
-    api_secret: 'CYEYZept3jVWxd829y_AsxNsp1E' 
+const cloudinaryConfig = {
+    cloud_name: 'dgmxc8fal',
+    api_key: '658928733417987',
+    api_secret: 'CYEYZept3jVWxd829y_AsxNsp1E'
 };
 cloudinary.config(cloudinaryConfig);
 
-const encrypt = async (textPlain) => {
+async function encrypt(textPlain) {
     const hash = await bcrypt.hash(textPlain, 8);
     return hash;
-};
+}
+
+function readRegisteredUsers() {
+    const data = fs.readFileSync(registeredFilePath, 'utf-8');
+    return JSON.parse(data);
+}
+
+function writeRegisteredUsers(users) {
+    fs.writeFileSync(registeredFilePath, JSON.stringify(users, null, ' '));
+}
 
 const controladorUsers = {
     iniciarSesion: (req, res) => {
-        
         res.render("users/login");
     },
     registrarse: (req, res) => {
         res.render("users/registro");
     },
     create: async (req, res) => {
-        let resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
+        const resultValidation = validationResult(req);
+        if (!resultValidation.isEmpty()) {
             return res.render("users/registro", {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
         }
 
-        const registered = JSON.parse(fs.readFileSync(registeredFilePath, 'utf-8'));
+        const registered = readRegisteredUsers();
         const idRegistrados = registered.length > 0 ? registered[registered.length - 1].id + 1 : 1;
 
         const { Password } = req.body;
@@ -76,31 +81,33 @@ const controladorUsers = {
         };
 
         registered.push(ObjRegistrados);
-        fs.writeFileSync(registeredFilePath, JSON.stringify(registered, null, ' '));
+        writeRegisteredUsers(registered);
 
         res.redirect('/');
     },
     inicio: (req, res) => {
-        let resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
+        const resultValidation = validationResult(req);
+        if (!resultValidation.isEmpty()) {
             return res.render("users/login", {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
         }
 
-        const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
+        const usuarios = readRegisteredUsers();
         const { email, password } = req.body;
-        const user = usuarios.find((i) => i.Email == email)
-    
+        const user = usuarios.find((i) => i.Email === email);
+
         if (user && bcrypt.compareSync(password, user.Password)) {
             const token = jwt.sign({
-                    exp: Math.floor(Date.now() / 1000) + 10,
-                    data: user,
-                },
+                exp: Math.floor(Date.now() / 1000) + 10,
+                data: user,
+            },
                 secretKey
             );
-    
+
+            req.session.user = user;
+
             res.redirect("/");
         } else {
             return res.render("users/login", {
@@ -108,13 +115,7 @@ const controladorUsers = {
                 oldData: req.body
             });
         }
-
-        req.session = user
-
-        console.log(req.session)
-    },
-  
-    
+    }
 };
 
 module.exports = controladorUsers;

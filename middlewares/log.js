@@ -1,13 +1,10 @@
 function usersLog (req,res,next){
-    res.locals.islogged = false
+    res.locals.islogged = false;
 
-    if(req.session.user){
-        res.locals.islogged = true
-    }
+    if(req.session.user)
+        res.locals.islogged = true;
 
-
-    next()
-
+    next();
 }
 
-module.exports = usersLog
+module.exports = usersLog;

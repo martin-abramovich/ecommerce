@@ -1,129 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/detalle.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://kit.fontawesome.com/c9cf8990b8.js"
-      crossorigin="anonymous"
-    ></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/detalle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+        crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c9cf8990b8.js" crossorigin="anonymous"></script>
     <title>Detalle de producto</title>
-  </head>
-  <body class="mt-5">
+</head>
+<body class="mt-5">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 fixed-top">
-        <a class="navbar-brand" href="/">Galante</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 fixed-top">
+            <a class="navbar-brand" href="/">Galante</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">
-                Inicio <span class="sr-only"></span>
-              </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Contactanos</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href=".././users/registro">Registro</a>
-            </li>
-          </ul>
-        </div>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/carrito">
-              <i
-                class="fas fa-shopping-cart fa-lg mr-3"
-                style="color: #eceff3"
-              ></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Contactanos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href=".././users/registro">Registro</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/carrito">
+                        <i class="fas fa-shopping-cart fa-lg mr-3" style="color: #eceff3"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container-new container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="product-image">
-            <img
-              src="<%= producto.imagen %>"
-              alt="Nombre del producto"
-              class="img-fluid zoomable"
-            />
-          </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-image">
+                    <img src="<%= producto.imagen %>" alt="Nombre del producto" class="img-fluid zoomable">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-description">
+                    <h2><%= producto.titulo %></h2>
+                    <p><%= producto.descripcion %></p>
+                    <h3>Precio: <%= producto.precio %></h3>
+                    <a href="/carrito"><button class="btn btn-dark">Agregar al carrito</button></a>
+                    <a href="/edicion/<%= producto.id %>"><button class="btn btn-dark">Editar</button></a>
+                    <form action="/delete/<%= producto.id %>?_method=DELETE" method="post">
+                        <button type="submit" class="btn btn-dark mt-2">Eliminar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-          <div class="product-description">
-            <h2><%= producto.titulo %></h2>
-            <p>
-              <%= producto.descripcion %>
-            </p>
-            <h3>Precio: <%= producto.precio %></h3>
-            <a href="/carrito">
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </a>
-          <a href="/edicion/<%= producto.id %>">
-            <button class="btn btn-dark">Editar</button>
-          </a>
-          <form action="/delete/<%= producto.id %>?_method=DELETE" method="post">
-            <button type="submit" class="btn btn-dark mt-2">Eliminar</button>
-          </form>
-          </div>
-        </div>
-      </div>
     </div>
 
     <footer class="bg-dark text-light text-center">
-      <div class="container-new container py-4">
-        <div class="row">
-          <div class="col-md-6">
-            <h5>Enlaces</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Inicio</a></li>
-              <li><a href="#">Quienes somos</a></li>
-              <li><a href="#">Contactanos</a></li>
-              <li><a href="#">Registro</a></li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <h5>Contacto</h5>
-            <p>Dirección: 123 Calle Principal, Ciudad</p>
-            <p>Teléfono: 123-456-7890</p>
-            <p>Email: tienda@galante.com</p>
-          </div>
+        <div class="container-new container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Quienes somos</a></li>
+                        <li><a href="#">Contactanos</a></li>
+                        <li><a href="#">Registro</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Contacto</h5>
+                    <p>Dirección: 123 Calle Principal, Ciudad</p>
+                    <p>Teléfono: 123-456-7890</p>
+                    <p>Email: tienda@galante.com</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="bg-secondary py-2">
-        <div class="container text-center">
-          <p class="mb-0">© 2023 Galante Todos los derechos reservados.</p>
+        <div class="bg-secondary py-2">
+            <div class="container text-center">
+                <p class="mb-0">© 2023 Galante Todos los derechos reservados.</p>
+            </div>
         </div>
-      </div>
     </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
 </html>

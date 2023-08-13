@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- head -->
+<head>
   <%- include('../partials/head.ejs', {title: 'Editar'}) %>
+</head>
+<body>
+  <%- include('../partials/header.ejs') %>
 
-  <body>
-      <%- include('../partials/header.ejs') %>
+  <main class="container">
+    
+    <h2 style="margin-top: 100px; margin-bottom: 30px;">Edición de producto</h2>
 
-    <main>
-      <form action="/edicion/<%= producto.id %>?_method=PUT" method="post" class="container" enctype="multipart/form-data" style="margin-top: 180px; margin-bottom: 48px;">
-        <div class="mb-3">
-          <label for="title" class="form-label">Titulo</label>
-          <input type="text" class="form-control" id="titulo" name="titulo" aria-describedby="emailHelp" value="<%= producto.titulo %>">
-        </div>
+    <form action="/edicion/<%= producto.id %>?_method=PUT" method="post" class="mb-3" enctype="multipart/form-data">
+      <label for="titulo" class="form-label">Titulo</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" value="<%= producto.titulo %>">
 
-        <div class="input-group mb-3">
-          <img width="20%" src="<%= producto.imagen %>">
-          <input type="file" class="form-control" id="imagen" name="imagen">
-          <label class="input-group-text" for="imagen">Upload</label>
-        </div>
+      <div class="input-group mt-3">
+        <img width="20%" src="<%= producto.imagen %>">
+        <input type="file" class="form-control" id="imagen" name="imagen">
+        <label class="input-group-text" for="imagen">Upload</label>
+      </div>
 
-        <div class="mb-3">
-          <label for="descripcion" class="form-label">Descipción</label>
-          <input type="text" class="form-control" id="descripcion" name="descripcion" aria-describedby="emailHelp" value="<%= producto.descripcion %>">
-        </div>
-       
-        <div class="mb-3">
-          <label for="precio" class="form-label">Precio</label>
-          <input type="text" class="form-control" id="precio" name="precio" aria-describedby="emailHelp" value="<%= producto.precio %>">
-        </div>
-       
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </main>
+      <label for="descripcion" class="form-label mt-3">Descripción</label>
+      <input type="text" class="form-control" id="descripcion" name="descripcion" value="<%= producto.descripcion %>">
 
-    <%- include('../partials/footer.ejs') %>
-  </body>
+      <label for="precio" class="form-label mt-3">Precio</label>
+      <input type="text" class="form-control" id="precio" name="precio" value="<%= producto.precio %>">
+
+      <button type="submit" class="btn btn-primary mt-3">Guardar cambios</button>
+    </form>
+  </main>
+
+  <%- include('../partials/footer.ejs') %>
+</body>
 </html>
