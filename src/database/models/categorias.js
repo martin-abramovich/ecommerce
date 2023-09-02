@@ -14,9 +14,14 @@ function categoriasData(sequelize, Datatypes){
           }
     }
 
-    let config = {camelCase: false, timestamps: false};
+    let config = {tableName: 'categoria', camelCase: false, timestamps: false};
 
     const categorias = sequelize.define(tabla, campos, config);
+
+    categorias.associate = function(modelos){
+      categorias.hasMany(modelos.producto, {as: "productos", foreignKey: 'categoria_id' });
+    }
+
     return categorias;
 }
 

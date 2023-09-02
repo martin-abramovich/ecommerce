@@ -42,9 +42,14 @@ function ventasData(sequelize, Datatypes){
         },
     }
 
-    let config = {camelCase: false, timestamps: false};
+    let config = {tableName: 'venta', camelCase: false, timestamps: false};
 
     const ventas = sequelize.define(tabla, campos, config);
+
+    ventas.associate = function(modelos){
+        ventas.hasMany(modelos.producto, {as: "productos", foreignKey: 'venta_id' });
+    }
+
     return ventas;
 }
 

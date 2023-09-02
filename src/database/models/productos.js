@@ -21,7 +21,7 @@ function productosData(sequelize, Datatypes){
             allowNull: false,
           },
           imagen: {
-            type: Datatypes.STRING(50),
+            type: Datatypes.STRING(255),
             allowNull: false,
           },
           estado: {
@@ -51,15 +51,15 @@ function productosData(sequelize, Datatypes){
           },
     };
 
-    let config = {camelCase: false, timestamps: false};
+    let config = {tableName: 'producto', camelCase: false, timestamps: false};
 
     const productos = sequelize.define(tabla, campos, config);
 
-    /* productos.associate = function(modelos){
+    productos.associate = function(modelos){
       productos.belongsTo(modelos.categoria, {as: "categorias", foreignKey: 'categoria_id' });
-      productos.belongsTo(Usuario, { foreignKey: 'usuario_id' });
-      productos.belongsTo(Venta, { foreignKey: 'venta_id' });
-    } */
+      productos.belongsTo(modelos.usuario, {as: "usuarios", foreignKey: 'usuario_id' });
+      productos.belongsTo(modelos.venta, {as: "ventas", foreignKey: 'venta_id' });
+    }
 
     return productos;
 }

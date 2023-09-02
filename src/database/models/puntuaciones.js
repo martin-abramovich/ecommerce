@@ -22,9 +22,14 @@ function puntuacionData(sequelize, Datatypes){
         },
     }
 
-    let config = {camelCase: false, timestamps: false};
+    let config = {tableName: 'puntuacion', camelCase: false, timestamps: false};
 
     const puntuaciones = sequelize.define(tabla, campos, config);
+
+    puntuaciones.associate = function(modelos){
+        puntuaciones.belongsTo(modelos.usuario, {as: "usuarios", foreignKey: 'usuario_id' });
+    }
+
     return puntuaciones;
 }
 

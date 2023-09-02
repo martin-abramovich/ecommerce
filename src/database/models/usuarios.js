@@ -25,7 +25,7 @@ function usuarioData(sequelize, Datatypes){
             allowNull: false,
         },
         imagen: {
-            type: Datatypes.STRING(50),
+            type: Datatypes.STRING(255),
             allowNull: false,
         },
         administrador: {
@@ -41,9 +41,15 @@ function usuarioData(sequelize, Datatypes){
         },
     }
 
-    let config = {camelCase: false, timestamps: false};
+    let config = {tableName: 'usuario', camelCase: false, timestamps: false};
 
     const usuarios = sequelize.define(tabla, campos, config);
+
+    usuarios.associate = function(modelos){
+        usuarios.hasMany(modelos.producto, {as: "productos", foreignKey: 'usuario_id' });
+        usuarios.hasMany(modelos.puntuacion, {as: "puntuaciones", foreignKey: 'usuario_id' });
+    }
+
     return usuarios;
 }
 
