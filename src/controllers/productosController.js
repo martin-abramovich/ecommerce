@@ -15,9 +15,6 @@ function writeProductos(productos) {
 
 const controlador = {
     index: function (req, res) {
-        /* const productos = readProductos();
-        res.render('index', { productos }); */
-
         db.producto.findAll().then((resultado) => {
             res.render('index', { productos: resultado });
         });
@@ -42,19 +39,20 @@ const controlador = {
         }
     },
     crear: (req, res) => {
-        res.render('products/creacion');
+        db.categoria.findAll()
+        .then((cat) => {
+            return res.render('products/creacion', {categorias: cat});
+        })
+        
     },
     creados: function (req, res) {
-        const productos = readProductos();
-        const nuevoProducto = {
-            id: productos[productos.length - 1].id + 1,
-            titulo: req.body.titulo,
+        //ERROR
+        db.producto.create({
+            nombre: req.body.titulo,
             descripcion: req.body.descripcion,
             precio: req.body.precio,
             imagen: req.file ? `/img/${req.file.filename}` : '/img/default-game.jpg',
-        };
-        productos.push(nuevoProducto);
-        writeProductos(productos);
+        })
         res.redirect('/');
     },
     getUpdateForm: function (req, res) {

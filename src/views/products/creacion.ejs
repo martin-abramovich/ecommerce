@@ -22,6 +22,18 @@
           <label for="descripcion" class="form-label">Descipción</label>
           <input type="text" class="form-control" id="descripcion" name="descripcion" aria-describedby="emailHelp">
         </div>
+
+        <div class="mb-3">
+          <label for="categoria" class="form-label">Categoría</label>
+          <select name="categoria">
+            <option value=""></option>
+            <% for (categoria of categorias) { %>
+              <option value="<%= categoria.id %>">
+                <%= categoria.nombre %>
+              </option>
+            <% } %>
+          </select>
+        </div>             
        
         <div class="mb-3">
           <label for="precio" class="form-label">Precio</label>
