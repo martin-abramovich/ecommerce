@@ -36,7 +36,7 @@
     <span class="linea"></span>
     <div class="container">
       <div class="row mt-3">
-        <% productos.forEach(producto => { %>
+        <% for(let producto of productos) { %>
           <div class="col-lg-4 col-md-6 col-sm-12 mb-2 pb-5 producto">
             <a href="/detalle/<%= producto.id %>">
               <img src="<%= producto.imagen %>" alt="<%= producto.titulo %>" />
@@ -48,7 +48,7 @@
               <p class="precio"><%= producto.precio %></p>
             </div>
           </div>
-        <% }) %>     
+        <% } %>     
       </div>
     </div>
   </section>

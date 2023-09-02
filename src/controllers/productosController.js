@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const productosPath = path.join(__dirname, '../data/productos.json');
+const db = require('../database/models');
+const { clear } = require('console');
 
 function readProductos() {
     const data = fs.readFileSync(productosPath, 'utf-8');
@@ -13,8 +15,12 @@ function writeProductos(productos) {
 
 const controlador = {
     index: function (req, res) {
-        const productos = readProductos();
-        res.render('index', { productos });
+        /* const productos = readProductos();
+        res.render('index', { productos }); */
+
+        db.producto.findAll().then((resultado) => {
+            res.render('index', { productos: resultado });
+        });
     },
 
     carrito: (req, res) => {
