@@ -7,8 +7,6 @@ const fs = require('fs');
 const path = require('path');
 const db = require("../database/models");
 
-const usuariosPath = path.join(__dirname, '../data/registrados.json');
-
 async function emailExists(Email) {
     const user = await db.usuario.findOne({
         where: {

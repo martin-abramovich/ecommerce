@@ -12,7 +12,7 @@
 
     <form action="/edicion/<%= producto.id %>?_method=PUT" method="post" class="mb-3" enctype="multipart/form-data">
       <label for="titulo" class="form-label">Titulo</label>
-      <input type="text" class="form-control" id="titulo" name="titulo" value="<%= producto.titulo %>">
+      <input type="text" class="form-control" id="titulo" name="titulo" value="<%= producto.nombre %>">
 
       <div class="input-group mt-3">
         <img width="20%" src="<%= producto.imagen %>">

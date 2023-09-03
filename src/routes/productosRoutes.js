@@ -4,18 +4,7 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 
-// Configuración del almacenamiento de multer
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../../public/img'));
-    },
-    filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now();
-        cb(null, `product-${uniqueSuffix}${path.extname(file.originalname)}`);
-    },
-});
-
-const upload = multer({ storage });
+const upload = multer();
 
 // Rutas
 router.get('/', productosController.index);
