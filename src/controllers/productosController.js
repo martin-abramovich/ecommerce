@@ -46,12 +46,16 @@ const controlador = {
         
     },
     creados: function (req, res) {
-        //ERROR
+        //HAY COSAS QUE CORREGIR
         db.producto.create({
             nombre: req.body.titulo,
             descripcion: req.body.descripcion,
             precio: req.body.precio,
             imagen: req.file ? `/img/${req.file.filename}` : '/img/default-game.jpg',
+            estado: 'N', // corregir
+            fecha_creacion: Date.now(),
+            usuario_id: 1, // corregir
+            categoria_id: 1 // corregir
         })
         res.redirect('/');
     },
