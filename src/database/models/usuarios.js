@@ -17,12 +17,11 @@ function usuarioData(sequelize, Datatypes){
             allowNull: false,
         },
         clave: {
-            type: Datatypes.STRING(50),
+            type: Datatypes.STRING(100),
             allowNull: false,
         },
         telefono: {
             type: Datatypes.STRING(50),
-            allowNull: false,
         },
         imagen: {
             type: Datatypes.STRING(255),

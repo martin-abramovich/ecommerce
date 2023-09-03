@@ -94,5 +94,13 @@
   "Email": "danielmorales62@gmail.com",
   "avatar": "https://res.cloudinary.com/dgmxc8fal/image/upload/ecommerce_dh/avatars/avatar1693759859083-217755136",
   "Password": "$2a$08$EANSFH8ZIlAY.Me7lzlCyeFoaFhElaEbqDo1ctGsycaljdrt1/2e2"
+ },
+ {
+  "id": 13,
+  "Usuario": "Lolo",
+  "Apellido": "Mendez",
+  "Email": "lolo@gmail.com",
+  "avatar": "/img/default-avatar.png",
+  "Password": "$2a$08$8kzjH5OSNDkAr0fwxVbua.tqxYEMyjAduEJdixCxKxH6HkEPR1K3q"
  }
 ]

@@ -6,7 +6,7 @@ const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
 const jwt = require("jsonwebtoken");
 const session = require('express-session');
-let db = require("../database/models")
+const db = require("../database/models");
 
 const registeredFilePath = path.join(__dirname, '../data/registrados.json');
 const secretKey = 'Mi Llave Ultra Secreta';
@@ -20,15 +20,6 @@ cloudinary.config(cloudinaryConfig);
 async function encrypt(textPlain) {
     const hash = await bcrypt.hash(textPlain, 8);
     return hash;
-}
-
-function readRegisteredUsers() {
-    const data = fs.readFileSync(registeredFilePath, 'utf-8');
-    return JSON.parse(data);
-}
-
-function writeRegisteredUsers(users) {
-    fs.writeFileSync(registeredFilePath, JSON.stringify(users, null, ' '));
 }
 
 const controladorUsers = {
@@ -46,9 +37,6 @@ const controladorUsers = {
                 oldData: req.body
             });
         }
-
-        const registered = readRegisteredUsers();
-        const idRegistrados = registered.length > 0 ? registered[registered.length - 1].id + 1 : 1;
 
         const { Password } = req.body;
         const Passwordhash = await encrypt(Password);
@@ -70,29 +58,18 @@ const controladorUsers = {
 
             streamifier.createReadStream(imageBuffer).pipe(stream);
             avatarUrl = `https://res.cloudinary.com/dgmxc8fal/image/upload/ecommerce_dh/avatars/${customFilename}`;
-        }
-
-        const ObjRegistrados = {
-            id: idRegistrados,
-            Usuario: req.body.Usuario,
-            Apellido: req.body.Apellido,
-            Email: req.body.Email,
-            avatar: avatarUrl,
-            Password: Passwordhash
-        };
-
-        registered.push(ObjRegistrados);
-        writeRegisteredUsers(registered);
-
-        res.redirect('/');
+        } 
 
         db.usuario.create({
             nombre: req.body.Usuario,
             email:req.body.Email ,
-            clave:req.body.password ,
+            clave: Passwordhash ,
             imagen: avatarUrl ,
-
+            administrador: 0,
+            fecha_creacion: Date.now()
         })
+
+        res.redirect('/');
     },
     inicio: (req, res) => {
         const resultValidation = validationResult(req);

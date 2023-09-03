@@ -5,12 +5,18 @@ const multer = require('multer');
 const { body, check } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
+const db = require("../database/models");
 
 const usuariosPath = path.join(__dirname, '../data/registrados.json');
 
-function emailExists(Email) {
-    const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
-    return usuarios.some((usuario) => usuario.Email === Email);
+async function emailExists(Email) {
+    const user = await db.usuario.findOne({
+        where: {
+            email: Email
+        }
+    });
+
+    return user !== null;
 }
 
 const validations = [
@@ -20,7 +26,7 @@ const validations = [
     body('Password').notEmpty().withMessage('La contraseña no puede estar vacía').bail().isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
     body('Password2').notEmpty().withMessage('Verificación de contraseña no puede estar vacía'),
     body('Email').custom(async (value) => {
-        if (emailExists(value)) {
+        if (await emailExists(value)) {
             throw new Error('El correo electrónico ya está registrado');
         }
     }),
