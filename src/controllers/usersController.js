@@ -6,6 +6,7 @@ const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
 const jwt = require("jsonwebtoken");
 const session = require('express-session');
+let db = require("../database/models")
 
 const registeredFilePath = path.join(__dirname, '../data/registrados.json');
 const secretKey = 'Mi Llave Ultra Secreta';
@@ -84,6 +85,14 @@ const controladorUsers = {
         writeRegisteredUsers(registered);
 
         res.redirect('/');
+
+        db.usuario.create({
+            nombre: req.body.Usuario,
+            email:req.body.Email ,
+            clave:req.body.password ,
+            imagen: avatarUrl ,
+
+        })
     },
     inicio: (req, res) => {
         const resultValidation = validationResult(req);

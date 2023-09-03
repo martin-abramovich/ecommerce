@@ -62,5 +62,37 @@
   "Email": "danielmoralese26@gmail.com",
   "avatar": "/img/default-avatar.png",
   "Password": "$2a$08$6jpHYS.ctUuFRoQBlRodl.iQArWTZ62MJfyqacI2Sn0dl3gleu136"
+ },
+ {
+  "id": 9,
+  "Usuario": "daniel",
+  "Apellido": "Moralees",
+  "Email": "danielmoralese89@gmail.com",
+  "avatar": "/img/default-avatar.png",
+  "Password": "$2a$08$2l8yWhPsYAWcxypZrDxEReZNw1rWIAQXvtwp3htE9Q8BFiL.qibai"
+ },
+ {
+  "id": 10,
+  "Usuario": "daniel",
+  "Apellido": "Moralees",
+  "Email": "danielmoralese000@gmail.com",
+  "avatar": "https://res.cloudinary.com/dgmxc8fal/image/upload/ecommerce_dh/avatars/avatar1693758600541-730278164",
+  "Password": "$2a$08$1Y8aSY.x74vbBWP4oEAtH.j2UWGFE1nk9hb37tWz/MEQpXJtt1Fue"
+ },
+ {
+  "id": 11,
+  "Usuario": "daniel",
+  "Apellido": "Moralees",
+  "Email": "danielmoralese6@gmail.com",
+  "avatar": "https://res.cloudinary.com/dgmxc8fal/image/upload/ecommerce_dh/avatars/avatar1693759795784-385245249",
+  "Password": "$2a$08$opOFBFmN9sLBFr8M2Kvpce4HWQU2rJdzZ2rS4BrbJntrPta0N.ITS"
+ },
+ {
+  "id": 12,
+  "Usuario": "daniel",
+  "Apellido": "Moralees",
+  "Email": "danielmorales62@gmail.com",
+  "avatar": "https://res.cloudinary.com/dgmxc8fal/image/upload/ecommerce_dh/avatars/avatar1693759859083-217755136",
+  "Password": "$2a$08$EANSFH8ZIlAY.Me7lzlCyeFoaFhElaEbqDo1ctGsycaljdrt1/2e2"
  }
 ]
