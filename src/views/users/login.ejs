@@ -21,7 +21,7 @@
       <% } %>
       <div class="formulario">
         <label for="emailInput" class="form-label">Dirección de correo electrónico</label>
-        <input type="email" class="form-control" id="emailInput" name="email" placeholder="nombre@ejemplo.com">
+        <input type="email" class="form-control" id="emailInput" name="email" value="<%= locals.oldData ? oldData.email : null %>" placeholder="nombre@ejemplo.com"  >
         <% if (locals.errors && errors.email) { %>
           <div class="text-danger mt-2"><%= errors.email.msg %></div>
         <% } %>

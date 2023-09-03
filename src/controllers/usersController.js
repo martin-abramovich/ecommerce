@@ -74,34 +74,40 @@ const controladorUsers = {
     inicio: (req, res) => {
         const resultValidation = validationResult(req);
         if (!resultValidation.isEmpty()) {
-            return res.render("users/login", {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
+          return res.render('users/login', {
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+          });
         }
-
-        const usuarios = readRegisteredUsers();
+    
         const { email, password } = req.body;
-        const user = usuarios.find((i) => i.Email === email);
-
-        if (user && bcrypt.compareSync(password, user.Password)) {
-            const token = jwt.sign({
-                exp: Math.floor(Date.now() / 1000) + 10,
-                data: user,
-            },
+        
+        db.usuario.findOne({ where: { email: email } })
+          .then((user) => {
+            if (user && bcrypt.compareSync(password, user.clave)) {
+              const token = jwt.sign(
+                {
+                  exp: Math.floor(Date.now() / 1000) + 10,
+                  data: user,
+                },
                 secretKey
-            );
-
-            req.session.user = user;
-
-            res.redirect("/");
-        } else {
-            return res.render("users/login", {
-                mensaje: "Usuario o contraseña incorrecta",
-                oldData: req.body
-            });
-        }
-    }
+              );
+    
+              req.session.user = user;
+    
+              res.redirect('/');
+            } else {
+              return res.render('users/login', {
+                mensaje: 'Usuario o contraseña incorrecta',
+                oldData: req.body,
+              });
+            }
+          })
+          .catch((error) => {
+            console.error('Error al buscar al usuario en la base de datos:', error);
+            return res.status(500).send('Error interno del servidor');
+          });
+      },
 };
 
 module.exports = controladorUsers;
