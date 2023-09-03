@@ -80,6 +80,7 @@ const controlador = {
             usuario_id: 1, // corregir
             categoria_id: 1 // corregir
         })
+        
         res.redirect('/');
     },
     getUpdateForm: function (req, res) {
