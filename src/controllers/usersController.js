@@ -108,6 +108,7 @@ const controladorUsers = {
             return res.status(500).send('Error interno del servidor');
           });
       },
+      
 };
 
 module.exports = controladorUsers;

@@ -15,5 +15,6 @@ router.post('/crear', upload.single('imagen'), productosController.creados);
 router.get("/edicion/:id", productosController.getUpdateForm);
 router.put("/edicion/:id", upload.single('imagen'), productosController.putUpdateForm);
 router.delete("/delete/:id", productosController.delete);
+router.get("/administrador", productosController.admin)
 
 module.exports = router;

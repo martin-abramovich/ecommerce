@@ -130,6 +130,10 @@ const controlador = {
         })
         res.redirect('/');
     },
+    admin: (req,res)=>{
+        res.render("administrador")
+
+      },
 };
 
 module.exports = controlador;

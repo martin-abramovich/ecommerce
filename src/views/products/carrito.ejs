@@ -10,46 +10,64 @@
   <title>Mi carrito</title>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 fixed-top">
-        <a class="navbar-brand" href="/">Galante</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Volver al inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/registro">Registro</a>
-            </li>
-          </ul>
+  <%- include('../partials/header.ejs') %>
+  <div class="full">
+    <main class="main-full">
+      
+        <div class="product-titulo smaller-image">
+          <h2>Mi carrito</h2>
         </div>
-      </nav>
-    </header>
-    <main>
-      <div class="product-container">
-        <div class="product-image smaller-image">
-          <img src="images/obra-uno.jpg" alt="Nombre del producto" class="img-fluid">
-        </div>
-        <div class="product-description">
-          <h2>Van Gogh</h2>
-          <h4>Precio: $5000</h4>
-          <br>
-        </div>
-      </div>
-      <div class="purchase">
-        <h2>Total: $5000</h2>
-        <h5>Envío gratis</h5>
-      </div>
-      <div class="boton-purchase">
-        <a href="/carrito" class="btn btn-dark">Finalizar compra</a>
-        <a href="/carrito" class="btn btn-dark">Medios de pago</a>
-      </div>
+        <section>
+          <article class="articulos">
+            <div class="imagen-producto">
+              <img decoding="async" src="/public/img/1.png">
+            </div>
+            <div role="button" tabindex="0" data-js="titulo" class="item-titulo" aria-label="Obra de arte hecha a mano con pintura al oleo">
+              <span data-js="texto"> Obra de arte hecha a mano con pintura al oleo </span>
+                 
+            </div>
+            
+            <div>
+
+            </div>
+          </article>
+          <div class="botones">
+            <span role="link" tabindex="0" class="bf-ui-link" data-id="link_delete_item" data-js="link" aria-label="Eliminar"><span data-js="rich-text" class="bf-ui-rich-text bf-ui-rich-text--bold bf-ui-rich-text--xxsmall">Eliminar</span></span>
+            
+            <span role="link" tabindex="0" class="bf-ui-link" data-id="link_change_item_list" data-js="link" aria-label="Guardar"><span data-js="rich-text" class="bf-ui-rich-text bf-ui-rich-text--bold bf-ui-rich-text--xxsmall">Guardar</span></span>
+            <h2 class="precio"> 22.333$</h2>
+         </div>
+        </section>
+     
     </main>
+
+    <div class="main-full2">
+      <div class="main">
+        <div class="contenedor-main">
+          <div class="informacion">
+            <div>
+              producto
+            </div>
+            <div>
+              22.333$
+            </div>
+            
+        </div>
+        <div class="informacion2">
+          cual es el costo de envio?
+        </div>
+        <div class="total">
+          <div class="total-ticket">
+            <div class="total-precio">
+              <h3>Total</h3>
+              <h4>23,333$</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
     <footer class="bg-dark text-light text-center">
       <div class="container-new container py-4">
         <div class="row">
