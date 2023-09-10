@@ -43,10 +43,10 @@ footer {
   left: 0;
 }
 .main-full{
-  padding-top: 108px;
-  padding-left: 40px;
-  padding-right: 40px;
- 
+  margin-top: 108px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: auto;
   flex-direction: column;
   display: flex;
   
@@ -98,4 +98,17 @@ footer {
 .total-precio  {
   display: flex;
   justify-content: space-between;
+}
+.section1{
+  border: solid 1px white;
+  border-radius: 3px;
+  background-color: white;
+}
+.full{
+  background-color: #ebebeb;
+  height: 35pc;
+  
+}
+.main-full, .main-full2{
+  background-color: white ;
 }
