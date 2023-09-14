@@ -1,114 +1,30 @@
-
-body {
-     background-color: var(--bs-body-bg);
-  
+header{
   
 }
-
-.product-description {
-  flex: 0 0 50%;
-  text-align: center;
-}
-
-.product-container {
-  display: flex;
-  align-items: center;
-  margin-top: 100px;
-}
-
-.purchase {
-  display: flex;
-  margin-top: 5%;
-  padding-left: 49%;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center;
-}
-
-.boton-purchase {
-  display: flex;
-  padding-left: 48%;
-  justify-content: space-evenly;
-  margin-top: 50px;
-}
-
-.boton-payment {
-  display: flex;
-}
-
-footer {
+main{
+  display: block;
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.main-full{
-  margin-top: 108px;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-bottom: auto;
-  flex-direction: column;
-  display: flex;
-  
-}
-.full{
+ }
+ .contenedora{
   display: grid;
+  gap: 50px;
   grid-template-columns: calc(100% - 392px) auto;
-  gap: 20px;
-}
-.main-full2{
-  padding-top: 108px;
-}
-.imagen-producto{
-  height: 70px;
-  width: 80px;
-  margin-right: 10px;
-  
-}
-.articulos{
-  padding: 0;
-  flex-direction: row;
-  display: flex;
-}
-.botones{
-  
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.main-full2{
-  border-radius: 6px;
-    box-shadow: 0 1px 2px rgba(0,0,0,.12);
-    height: -moz-fit-content;
-    height: fit-content;
-    margin-bottom: 16px;
-    margin-top: 0;
-    padding: 20px 0 24px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 105px;
-    width: 360px;
-    z-index: 10;
- 
-}
-.informacion{
-  display: flex;
-  justify-content: space-between;
-}
-.total-precio  {
-  display: flex;
-  justify-content: space-between;
-}
-.section1{
-  border: solid 1px white;
-  border-radius: 3px;
-  background-color: white;
-}
-.full{
-  background-color: #ebebeb;
-  height: 35pc;
-  
-}
-.main-full, .main-full2{
-  background-color: white ;
+  height: auto;
+  margin: 100px auto 44px;
+  max-width: 1200px;
+  min-height: unset;
+ }
+ .contenedor-p{
+  padding-top: 0;
+  padding-bottom: 0;
+ }
+ .contenedor{
+  width: 100%;
+  height: auto;
+ }
+.separador{
+  background: rgba(0,0,0,.1);
+  height: 1px;
+  margin: 0;
+  width: 100%;
 }

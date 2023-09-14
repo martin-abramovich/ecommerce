@@ -8,95 +8,41 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/c9cf8990b8.js" crossorigin="anonymous"></script>
   <title>Mi carrito</title>
+  
 </head>
 <body>
-  <%- include('../partials/header.ejs') %>
-  <div class="full">
-    <main class="main-full">
-      
-        <div class="product-titulo smaller-image">
-          <h2>Mi carrito</h2>
-        </div>
-        <section class="section1">
-          <article class="articulos">
-            <div class="imagen-producto">
-              <img decoding="async" src="/public/img/1.png">
-            </div>
-            <div role="button" tabindex="0" data-js="titulo" class="item-titulo" aria-label="Obra de arte hecha a mano con pintura al oleo">
-              <span data-js="texto"> Obra de arte hecha a mano con pintura al oleo </span>
-                 
-            </div>
-            
-            <div>
 
+  <%- include('../partials/header.ejs') %>
+
+  <main>
+    <div class="contenedora">
+      <div class="contenedor-p">
+        <div class="contendor">
+        </div>
+        <div class="productos-header">
+          Mi carrito
+        </div>
+        <div class="separador">
+        </div>
+        <section class="productos-row">
+          <article class="articulos">
+            <div class="imagen">
+              <img src="/public/img/1.png">
+            </div>
+            <div class="descripcion">
             </div>
           </article>
-          <div class="botones">
-            <span role="link" tabindex="0" class="bf-ui-link" data-id="link_delete_item" data-js="link" aria-label="Eliminar"><span data-js="rich-text" class="bf-ui-rich-text bf-ui-rich-text--bold bf-ui-rich-text--xxsmall">Eliminar</span></span>
-            
-            <span role="link" tabindex="0" class="bf-ui-link" data-id="link_change_item_list" data-js="link" aria-label="Guardar"><span data-js="rich-text" class="bf-ui-rich-text bf-ui-rich-text--bold bf-ui-rich-text--xxsmall">Guardar</span></span>
-            <h2 class="precio"> 22.333$</h2>
-         </div>
         </section>
-     
-    </main>
-
-    <div class="main-full2">
-      <div class="main">
-        <div class="contenedor-main">
-          <div class="informacion">
-            <div>
-              producto
-            </div>
-            <div>
-              22.333$
-            </div>
-            
-        </div>
-        <div class="informacion2">
-          cual es el costo de envio?
-        </div>
-        <div class="total">
-          <div class="total-ticket">
-            <div class="total-precio">
-              <h3>Total</h3>
-              <h4>23,333$</h4>
-            </div>
+      </div>
+      <div class="contenedora-resumen">
+        <div class="contenedor-r">
+          <div>
+            resumen compra
           </div>
         </div>
+
       </div>
     </div>
-  </div>
-</div>  
-    <footer class="bg-dark text-light text-center">
-      <div class="container-new container py-4">
-        <div class="row">
-          <div class="col-md-6">
-            <h5>Enlaces</h5>
-            <ul class="list-unstyled">
-              <li><a href="/">Inicio</a></li>
-              <li><a href="/">Quiénes somos</a></li>
-              <li><a href="/">Contáctanos</a></li>
-              <li><a href="/registro">Registro</a></li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <h5>Contacto</h5>
-            <p>Dirección: 123 Calle Principal, Ciudad</p>
-            <p>Teléfono: 123-456-7890</p>
-            <p>Email: tienda@galante.com</p>
-          </div>
-        </div>
-      </div>
-      <div class="bg-secondary py-2">
-        <div class="container text-center">
-          <p class="mb-0">© 2023 Galante Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </footer>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+  </main>
 </body>
 </html>
