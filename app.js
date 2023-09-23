@@ -7,7 +7,7 @@ const productosRoutes = require('./src/routes/productosRoutes');
 const usersRouters = require('./src/routes/usersRouters');
 
 const app = express();
-const PORT = 4000;
+const PORT = 3000;
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'src', 'views'));
