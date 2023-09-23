@@ -6,6 +6,7 @@ const { body, check } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const db = require("../database/models");
+const guestMiddleware = require('../../middlewares/guestMiddleware');
 
 async function emailExists(Email) {
     const user = await db.usuario.findOne({
@@ -38,22 +39,13 @@ const validations = [
 
 const upload = multer();
 
-router.get('/registro', usersController.registrarse);
+router.get('/registro', guestMiddleware, usersController.registrarse);
 router.post('/registro', upload.single('avatar'), validations, usersController.create);
 
-router.get('/login', usersController.iniciarSesion);
+router.get('/login', guestMiddleware ,usersController.iniciarSesion);
 router.post('/login', [
     check('email').isEmail().withMessage('Email inválido'),
     check('password').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
 ], usersController.inicio);
-
-router.get('/check', (req, res) => {
-    if (req.session.usuarioLogueado == undefined) {
-        res.send('No estás logueado');
-    } else {
-        res.send('Datos del usuario logueado: ' + req.session.usuarioLogueado.Email);
-    }
-});
-
 
 module.exports = router;

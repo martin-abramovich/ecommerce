@@ -5,7 +5,6 @@ const methodOverride = require("method-override");
 
 const productosRoutes = require('./src/routes/productosRoutes');
 const usersRouters = require('./src/routes/usersRouters');
-const logMiddleware = require('./middlewares/logMiddleware');
 
 const app = express();
 const PORT = 4000;
@@ -14,9 +13,7 @@ app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'src', 'views'));
 
 app.use(session({
-  secret: 'si',
-  resave: false,
-  saveUninitialized: false
+  secret: 'secret'
 }));
 
 app.use(express.urlencoded({ extended: false }));
@@ -28,8 +25,6 @@ app.use(express.static(publicPath));
 
 app.use('/', productosRoutes);
 app.use('/users', usersRouters);
-
-app.use(logMiddleware);
 
 app.use('*', (req, res) => {
   res.send("Error de acceso, esta ruta no existe en el sitio");
