@@ -16,9 +16,9 @@ router.get('/carrito', productosController.carrito);
 router.get('/detalle/:id', productosController.detalle);
 router.get('/crear', authMiddleware, productosController.crear);
 router.post('/crear', upload.single('imagen'), productosController.creados);
-router.get("/edicion/:id", checkProductOwnership, productosController.getUpdateForm);
+router.get("/edicion/:id", authMiddleware, checkProductOwnership, productosController.getUpdateForm);
 router.put("/edicion/:id", upload.single('imagen'), productosController.putUpdateForm);
-router.delete("/delete/:id", checkProductOwnership, productosController.delete);
+router.delete("/delete/:id", authMiddleware, checkProductOwnership, productosController.delete);
 router.get("/administrador", productosController.admin)
 
 module.exports = router;
