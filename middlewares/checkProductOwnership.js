@@ -18,7 +18,13 @@ function obtenerProductoPorId(id) {
     obtenerProductoPorId(productId)
       .then(function (product) {
         if (!product || product.usuario_id !== userId) {
-          return res.status(403).send('Solo el creador del producto puede editarlo o eliminarlo.');
+          return res.status(403).send(`
+          <div style="text-align: center; padding-top:30px">
+          <h1>Solo el creador del producto puede editarlo o eliminarlo :(</h1>
+          <p><a href="/">Volver al inicio</a></p>
+          <img style="width:40%;" src="https://www.fizzcreations.com/wp-content/uploads/2022/10/2146-Minions-Comic-Ons-Face-on.png">
+          </div>
+      `);
         }
         next();
       })

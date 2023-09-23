@@ -27,7 +27,13 @@ app.use('/', productosRoutes);
 app.use('/users', usersRouters);
 
 app.use('*', (req, res) => {
-  res.send("Error de acceso, esta ruta no existe en el sitio");
+  res.send(`
+  <div style="text-align: center; padding-top:30px">
+  <h1>Error de acceso, esta ruta no existe en el sitio :(</h1>
+  <p><a href="/">Volver al inicio</a></p>
+  <img style="width:40%;" src="https://www.fizzcreations.com/wp-content/uploads/2022/10/2146-Minions-Comic-Ons-Face-on.png">
+  </div>
+`);
 });
 
 app.listen(PORT, () => {
