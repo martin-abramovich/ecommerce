@@ -20,5 +20,6 @@ router.get("/edicion/:id", authMiddleware, checkProductOwnership, productosContr
 router.put("/edicion/:id", upload.single('imagen'), productosController.putUpdateForm);
 router.delete("/delete/:id", authMiddleware, checkProductOwnership, productosController.delete);
 router.get("/administrador", productosController.admin)
+router.get('/buscar', productosController.buscar);
 
 module.exports = router;

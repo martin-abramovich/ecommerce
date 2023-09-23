@@ -3,6 +3,7 @@ const db = require('../database/models');
 const { clear } = require('console');
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
+const Sequelize = require('sequelize');
 
 const cloudinaryConfig = {
     cloud_name: 'dgmxc8fal',
@@ -193,6 +194,28 @@ const controlador = {
         res.render("administrador")
 
       },
+    buscar: async function(req, res) {
+      const { "form-control": formControl} = req.query;
+      try {
+        let mensaje = null;
+        if (formControl) {
+          const productos_buscados = await db.producto.findAll({
+            where: {
+              nombre: {
+                [Sequelize.Op.like]: `%${formControl}%`,
+              }
+            }
+          });
+          if (productos_buscados.length == 0){
+            mensaje = "No se encontraron productos";
+          }
+          res.render("products/search", {productos: productos_buscados, mensaje, formControl, user: req.session.user});
+          }
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({message: "Error interno del servidor"});
+      }
+    }
 };
 
 module.exports = controlador;

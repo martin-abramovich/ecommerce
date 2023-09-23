@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+<body>
+
+<%- include('../partials/header.ejs') %>   
+
+<main>
+     
+  <section class="galeria mb-5" style="margin-top: 7rem; ">
+    <h2 class="titulo">Productos encontrados para "<%= formControl %>"</h2>
+    <span class="linea"></span>
+    <div class="container">
+      <div class="row mt-3">
+        <% if (mensaje) { %>
+            <h3><%= mensaje %></h3>
+            <% } %>   
+        <% for(let producto of productos) { %>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-2 pb-5 producto">
+            <a href="/detalle/<%= producto.id %>">
+              <img src="<%= producto.imagen %>" alt="<%= producto.titulo %>" />
+            </a>
+            <div class="titulo-producto"><%= producto.titulo %></div>
+            <div class="descripcion-producto precio">$<%= producto.precio %></div>
+            <div class="producto-mobile">
+              <p><%= producto.titulo %></p>
+              <p class="precio">$<%= producto.precio %></p>
+            </div>
+          </div>
+        <% } %>     
+      </div>
+    </div>
+  </section>
+
+<%- include('../partials/footer.ejs') %>  
+  
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="/js/js-front.js"></script>
+</body>
+</html>
