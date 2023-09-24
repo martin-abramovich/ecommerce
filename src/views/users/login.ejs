@@ -46,10 +46,21 @@
         <div class="formulario5">
           <a href="#">Olvidaste tu contraseña</a>
         </div>
-        <div class="errores"> <ul></ul> </div>
+       
       </div>
     </div>
   </form>
 </div>
 </body>
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+      let emailInput = document.getElementById("emailInput").value;
+      let passInput = document.getElementById("passInput").value;
+
+      if (usuario === "" || contrasena === "") {
+          alert("Por favor, completa todos los campos.");
+          event.preventDefault(); // Evita que se envíe el formulario
+      }
+  });
+</script>
 </html>
