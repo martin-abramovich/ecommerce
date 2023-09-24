@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/profile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/head.ejs', {title: 'profile'}) %>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <div class="contenido-profile">
+        <div class="main-contenedor">
+            <div class="profile-header">
+                <div class="main">
+                    <div class="contenido">
+                        <div class="imagen">
+                            <img class="img" src="/public/img/default.png">
+                        </div>
+                        <div class="nombre-email">
+                            <h1>Daniel Morales</h1>
+                            <div class="email">
+                                <span>danielmoralese26@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="editar">
+                            <button class="edit"> Editar Perfil</button>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            <div class="crear-guardar">
+                
+                <div class="crear">
+                    <button class="crearP"> Crear</button>
+                </div>
+                <div class="guardar">
+                    <button class="guardado"> guardado</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

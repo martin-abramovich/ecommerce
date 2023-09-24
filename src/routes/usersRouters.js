@@ -54,6 +54,7 @@ router.get('/check', (req, res) => {
         res.send('Datos del usuario logueado: ' + req.session.usuarioLogueado.Email);
     }
 });
+router.get('/profile', usersController.profile)
 
 
 module.exports = router;

@@ -108,6 +108,10 @@ const controladorUsers = {
             return res.status(500).send('Error interno del servidor');
           });
       },
+      profile: (req,res) => {
+        res.render("users/profile")
+
+      }
       
 };
 

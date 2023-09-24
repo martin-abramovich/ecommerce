@@ -1,0 +1,70 @@
+
+.contenido-profile{
+    padding: 70px;
+}
+.main{
+    max-width: 488px;
+    width: 100%;
+}
+.profile-header{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    
+}
+.imagen{
+    display: flex;
+    margin-top: 77px;
+    justify-content: center;
+    border: 3px solid red;
+    width: 120px;
+    height: 120px;
+}
+.img{
+    justify-content: center;
+    display: flex;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid black;
+    
+    
+   
+}
+.contenido{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.email{
+    margin-top: 11px;
+    text-align: center;
+}
+.editar{
+    margin-top: 24px;
+}
+.edit{
+    border-radius: 30px;
+    border: 1px solid #6c757d;
+}
+.crear-guardar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+
+    
+   
+
+}
+.crear{
+    margin-right: 10px;
+    
+}
+.guardar{
+    margin-left: 10px;
+    
+}
