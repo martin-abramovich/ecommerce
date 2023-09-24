@@ -7,36 +7,39 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item active">
-                  <a class="nav-link" href="/">Inicio <span class="sr-only"></span></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/">Quiénes somos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#footer">Contáctanos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/users/registro">Registro</a>
-              </li>
-              <% // if(locals.islogged) { %>
-              <li class="nav-item">
-                  <a class="nav-link" href="/crear">Agregar producto</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/crear">Profile</a>
-              </li>
-              <% // } %>
-          </ul>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Inicio <span class="sr-only"></span></a>
+            </li>
+            <% if (!user) { %>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Quiénes somos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#footer">Contáctanos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/registro">Registro</a>
+            </li>
+            <% } %>
+            <% if (user) { %>
+            <!-- Mostrar Agregar producto y Profile solo si el usuario está autenticado -->
+            <li class="nav-item">
+                <a class="nav-link" href="/crear" style="font-weight: bold;">Agregar producto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/crear">Mi perfil</a>
+            </li>
+            <% } %>
+        </ul>        
       </div>
 
-      <form class="form-inline ml-auto">
-          <input class="button-dos" type="search" placeholder="Buscar productos" />
-          <button class="btn btn-dark" type="submit">
-              <i class="fa-solid fa-magnifying-glass" style="color: #ffffff"></i>
-          </button>
-      </form>
+      <form class="form-inline ml-auto" action="/buscar" method="get">
+        <input class="button-dos" type="search" name="form-control" placeholder="Buscar productos" />
+        <button class="btn btn-dark" type="submit">
+            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff"></i>
+        </button>
+    </form>    
 
       <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
