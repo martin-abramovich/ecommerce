@@ -1,14 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="/css/profile.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <%- include('../partials/head.ejs', {title: 'profile'}) %>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/profile.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/c9cf8990b8.js" crossorigin="anonymous"></script>
+        <title>Galante</title>
+      </head>
+      
 <body>
-    <%- include('../partials/header.ejs') %>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 fixed-top">
+            <a class="navbar-brand" href="/">Galante</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="/">Inicio <span class="sr-only"></span></a>
+                  </li>
+                  
+                  <li class="nav-item">
+                      <a class="nav-link" href="/">Quiénes somos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#footer">Contáctanos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/users/registro">Registro</a>
+                  </li>
+                
+                  <!-- Mostrar Agregar producto y Profile solo si el usuario está autenticado -->
+                  <li class="nav-item">
+                      <a class="nav-link" href="/crear" style="font-weight: bold;">Agregar producto</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/crear">Mi perfil</a>
+                  </li>
+                 
+              </ul>        
+            </div>
+      
+            <form class="form-inline ml-auto" action="/buscar" method="get">
+              <input class="button-dos" type="search" name="form-control" placeholder="Buscar productos" />
+              <button class="btn btn-dark" type="submit">
+                  <i class="fa-solid fa-magnifying-glass" style="color: #ffffff"></i>
+              </button>
+          </form>    
+      
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/carrito">
+                        <i class="fas fa-shopping-cart fa-lg mr-3" style="color: #eceff3"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/users/login">
+                        <i class="fa-solid fa-right-to-bracket fa-lg mr-3"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+      </header>
+    
+    
     <div class="contenido-profile">
         <div class="main-contenedor">
             <div class="profile-header">
