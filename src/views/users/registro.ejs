@@ -65,19 +65,8 @@
   </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
 
-<script>
-  document.getElementById("registerForm").addEventListener("submit", function(event) {
-      let nameInput = document.getElementById("nameInput").value;
-      let apellidoInput = document.getElementById("apellidoInput").value;
-      let emailInput = document.getElementById("emailInput").value;
-      let passInput = document.getElementById("passInput").value;
-      if (usuario === "" || contrasena === "") {
-          alert("Por favor, completa todos los campos.");
-          event.preventDefault(); // Evita que se envíe el formulario
-      }
-  });
-</script>
+<script src='/js/scriptValidatorRegister.js'></script>
+</body>
 
 </html>
