@@ -7,6 +7,7 @@ const db = require('../database/models');
 const authMiddleware = require('../../middlewares/authMiddleware');
 const userMiddleware = require('../../middlewares/checkProductOwnership');
 const checkProductOwnership = require('../../middlewares/checkProductOwnership');
+const cart = require('../../public/js/cart');
 
 const upload = multer();
 
@@ -21,5 +22,21 @@ router.put("/edicion/:id", upload.single('imagen'), productosController.putUpdat
 router.delete("/delete/:id", authMiddleware, checkProductOwnership, productosController.delete);
 router.get("/administrador", productosController.admin)
 router.get('/buscar', productosController.buscar);
+
+// Carrito
+router.post("/agregar-al-carrito/:id", productosController.addToCart);
+router.get('/carrito', (req, res) => {
+    const cartItems = cart.getCart();
+    res.render('carrito', { cart: cartItems });
+});
+router.post('/eliminar-del-carrito', (req, res) => {
+    const productId = req.body.productId;
+    cart.removeFromCart(productId);
+    res.redirect('/carrito');
+});
+router.post('/vaciar-carrito', (req, res) => {
+    cart.clearCart();
+    res.redirect('/carrito');
+});
 
 module.exports = router;

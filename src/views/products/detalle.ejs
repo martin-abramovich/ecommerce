@@ -26,7 +26,9 @@
                     <h2><%= producto.nombre %></h2>
                     <p><%= producto.descripcion %></p>
                     <h3>Precio: $<%= producto.precio %></h3>
-                    <a href="/carrito"><button class="btn btn-dark">Agregar al carrito</button></a>
+                    <form action="/agregar-al-carrito/<%= producto.id %>" method="post">
+                        <button type="submit" class="btn btn-dark">Agregar al carrito</button>
+                    </form>
                     <a href="/edicion/<%= producto.id %>"><button class="btn btn-dark">Editar</button></a>
                     <form action="/delete/<%= producto.id %>?_method=DELETE" method="post">
                         <button type="submit" class="btn btn-dark mt-2">Eliminar</button>

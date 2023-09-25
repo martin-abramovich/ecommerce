@@ -8,66 +8,9 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/c9cf8990b8.js" crossorigin="anonymous"></script>
   <title>Mi carrito</title>
-  
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 fixed-top">
-        <a class="navbar-brand" href="/">Galante</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item active">
-                  <a class="nav-link" href="/">Inicio <span class="sr-only"></span></a>
-              </li>
-              
-              <li class="nav-item">
-                  <a class="nav-link" href="/">Quiénes somos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#footer">Contáctanos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/users/registro">Registro</a>
-              </li>
-            
-              <!-- Mostrar Agregar producto y Profile solo si el usuario está autenticado -->
-              <li class="nav-item">
-                  <a class="nav-link" href="/crear" style="font-weight: bold;">Agregar producto</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/crear">Mi perfil</a>
-              </li>
-             
-          </ul>        
-        </div>
-  
-        <form class="form-inline ml-auto" action="/buscar" method="get">
-          <input class="button-dos" type="search" name="form-control" placeholder="Buscar productos" />
-          <button class="btn btn-dark" type="submit">
-              <i class="fa-solid fa-magnifying-glass" style="color: #ffffff"></i>
-          </button>
-      </form>    
-  
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/carrito">
-                    <i class="fas fa-shopping-cart fa-lg mr-3" style="color: #eceff3"></i>
-                </a>
-            </li>
-            <li>
-                <a class="nav-link" href="/users/login">
-                    <i class="fa-solid fa-right-to-bracket fa-lg mr-3"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-  </header>
- 
+  <%- include('../partials/header.ejs') %>
 
   <main>
     <div class="contenedora">
@@ -81,27 +24,19 @@
         </div>
         <div class="separador">
         </div>
+
         <section class="productos-row">
           <article class="articulos">
             <div class="imagen">
-              <img src="/public/img/1.png">
+              <img src="/img/1.png" style="width: 500%;">
             </div>
             <div class="descripcion">
-              Arte hecho a mano con pintura al oleo con increibles acabados en azul marino y rojo intenso
+              Arte hecho a mano con pintura al óleo con increíbles acabados en azul marino y rojo intenso
             </div>
             <div class="botones">
               <div class="interaciones">
                 <span class="--bold">
-                  <button class="botones-s"> Eliminar</button>
-                </span>
-                 
-
-                <span class="--bold">
-                  <button class="botones-s">  Guardar</button>
-                </span>
-
-                <span class="--bold">
-                  <button class="botones-s">  Ahora</button>
+                  <button class="botones-s">Eliminar</button>
                 </span>
               </div>
             </div>
@@ -110,168 +45,36 @@
           <div class="puntos">
             <div class="contenedor3">
               <div>
-                <svg aria-hidden="true" width="8" height="16" viewBox="0 0 8 16" fill="rgba(0, 0, 0, 0.55)"><path d="M3.99991 4.40034C4.66258 4.40034 5.19978 3.86314 5.19978 3.20048C5.19978 2.53781 4.66258 2.00061 3.99991 2.00061C3.33725 2.00061 2.80005 2.53781 2.80005 3.20048C2.80005 3.86314 3.33725 4.40034 3.99991 4.40034Z" fill="rgba(0, 0, 0, 0.55)"></path><path d="M5.19978 7.99994C5.19978 8.66261 4.66258 9.19981 3.99991 9.19981C3.33725 9.19981 2.80005 8.66261 2.80005 7.99994C2.80005 7.33727 3.33725 6.80007 3.99991 6.80007C4.66258 6.80007 5.19978 7.33727 5.19978 7.99994Z" fill="rgba(0, 0, 0, 0.55)"></path><path d="M5.19978 12.7994C5.19978 13.4621 4.66258 13.9993 3.99991 13.9993C3.33725 13.9993 2.80005 13.4621 2.80005 12.7994C2.80005 12.1367 3.33725 11.5995 3.99991 11.5995C4.66258 11.5995 5.19978 12.1367 5.19978 12.7994Z" fill="rgba(0, 0, 0, 0.55)"></path></svg>
+                <svg aria-hidden="true" width="8" height="16" viewBox="0 0 8 16" fill="rgba(0, 0, 0, 0.55)">
+                  <path d="M3.99991 4.40034C4.66258 4.40034 5.19978 3.86314 5.19978 3.20048C5.19978 2.53781 4.66258 2.00061 3.99991 2.00061C3.33725 2.00061 2.80005 2.53781 2.80005 3.20048C2.80005 3.86314 3.33725 4.40034 3.99991 4.40034Z" fill="rgba(0, 0, 0, 0.55)"></path>
+                  <path d="M5.19978 7.99994C5.19978 8.66261 4.66258 9.19981 3.99991 9.19981C3.33725 9.19981 2.80005 8.66261 2.80005 7.99994C2.80005 7.33727 3.33725 6.80007 3.99991 6.80007C4.66258 6.80007 5.19978 7.33727 5.19978 7.99994Z" fill="rgba(0, 0, 0, 0.55)"></path>
+                  <path d="M5.19978 12.7994C5.19978 13.4621 4.66258 13.9993 3.99991 13.9993C3.33725 13.9993 2.80005 13.4621 2.80005 12.7994C2.80005 12.1367 3.33725 11.5995 3.99991 11.5995C4.66258 11.5995 5.19978 12.1367 5.19978 12.7994Z" fill="rgba(0, 0, 0, 0.55)"></path>
+                </svg>
               </div> 
             </div>
           </div>
           <div class="unidades">
             <div class="selector">
               <span data-js="rich-text" class="bf-ui-rich-text">1 u.</span>
-              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="#3483fa"><path d="M4.40175 5.35519L7.99814 8.95157L11.5983 5.35144L12.4468 6.19997L7.99814 10.6486L3.55322 6.20371L4.40175 5.35519Z" fill="#3483fa"></path></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="#3483fa">
+                <path d="M4.40175 5.35519L7.99814 8.95157L11.5983 5.35144L12.4468 6.19997L7.99814 10.6486L3.55322 6.20371L4.40175 5.35519Z" fill="#3483fa"></path>
+              </svg>
               <path d="M4.40175 5.35519L7.99814 8.95157L11.5983 5.35144L12.4468 6.19997L7.99814 10.6486L3.55322 6.20371L4.40175 5.35519Z" fill="#3483fa"></path>
             </div>
           </div>
           <div class="precio">
             <div class="item-precio">
-              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="bf-ui-rich-price bf-ui-rich-price--mid"><meta itemprop="price" content="2.990"><span itemprop="priceCurrency" aria-hidden="true">$<!-- -->&nbsp;</span><span class="bf-ui-price-small">2.990</span></span>
-            
+              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="bf-ui-rich-price bf-ui-rich-price--mid">
+                <meta itemprop="price" content="2.990">
+                <span itemprop="priceCurrency" aria-hidden="true">$&nbsp;</span>
+                <span class="bf-ui-price-small">2.990</span>
+              </span>
             </div>
           </div>
-        </section>
-        <section class="productos-row">
-          <article class="articulos">
-            <div class="imagen">
-              <img src="/public/img/1.png">
-            </div>
-            <div class="descripcion">
-              Arte hecho a mano con pintura al oleo con increibles acabados en azul marino y rojo intenso
-            </div>
-            <div class="botones">
-              <div class="interaciones">
-                <span class="--bold">
-                  <button class="botones-s"> Eliminar</button>
-                </span>
-                 
-
-                <span class="--bold">
-                  <button class="botones-s">  Guardar</button>
-                </span>
-
-                <span class="--bold">
-                  <button class="botones-s">  Ahora</button>
-                </span>
-              </div>
-            </div>
-          </article>
-          
-          <div class="puntos">
-            <div class="contenedor3">
-              <div>
-                <svg aria-hidden="true" width="8" height="16" viewBox="0 0 8 16" fill="rgba(0, 0, 0, 0.55)"><path d="M3.99991 4.40034C4.66258 4.40034 5.19978 3.86314 5.19978 3.20048C5.19978 2.53781 4.66258 2.00061 3.99991 2.00061C3.33725 2.00061 2.80005 2.53781 2.80005 3.20048C2.80005 3.86314 3.33725 4.40034 3.99991 4.40034Z" fill="rgba(0, 0, 0, 0.55)"></path><path d="M5.19978 7.99994C5.19978 8.66261 4.66258 9.19981 3.99991 9.19981C3.33725 9.19981 2.80005 8.66261 2.80005 7.99994C2.80005 7.33727 3.33725 6.80007 3.99991 6.80007C4.66258 6.80007 5.19978 7.33727 5.19978 7.99994Z" fill="rgba(0, 0, 0, 0.55)"></path><path d="M5.19978 12.7994C5.19978 13.4621 4.66258 13.9993 3.99991 13.9993C3.33725 13.9993 2.80005 13.4621 2.80005 12.7994C2.80005 12.1367 3.33725 11.5995 3.99991 11.5995C4.66258 11.5995 5.19978 12.1367 5.19978 12.7994Z" fill="rgba(0, 0, 0, 0.55)"></path></svg>
-              </div> 
-            </div>
-          </div>
-          <div class="unidades">
-            <div class="selector">
-              <span data-js="rich-text" class="bf-ui-rich-text">1 u.</span>
-              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="#3483fa"><path d="M4.40175 5.35519L7.99814 8.95157L11.5983 5.35144L12.4468 6.19997L7.99814 10.6486L3.55322 6.20371L4.40175 5.35519Z" fill="#3483fa"></path></svg>
-              <path d="M4.40175 5.35519L7.99814 8.95157L11.5983 5.35144L12.4468 6.19997L7.99814 10.6486L3.55322 6.20371L4.40175 5.35519Z" fill="#3483fa"></path>
-            </div>
-          </div>
-          <div class="precio">
-            <div class="item-precio">
-              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="bf-ui-rich-price bf-ui-rich-price--mid"><meta itemprop="price" content="2.990"><span itemprop="priceCurrency" aria-hidden="true">$<!-- -->&nbsp;</span><span class="bf-ui-price-small">2.990</span></span>
-            
-            </div>
-          </div>
-        </section>
-        <section class="productos-row">
-          <article class="articulos">
-            <div class="imagen">
-              <img src="/public/img/1.png">
-            </div>
-            <div class="descripcion">
-              Arte hecho a mano con pintura al oleo con increibles acabados en azul marino y rojo intenso
-            </div>
-            <div class="botones">
-              <div class="interaciones">
-                <span class="--bold">
-                  <button class="botones-s"> Eliminar</button>
-                </span>
-                 
-
-                <span class="--bold">
-                  <button class="botones-s">  Guardar</button>
-                </span>
-
-                <span class="--bold">
-                  <button class="botones-s">  Ahora</button>
-                </span>
-              </div>
-            </div>
-          </article>
-          
-          <div class="puntos">
-            <div class="contenedor3">
-              <div>
-                <svg aria-hidden="true" width="8" height="16" viewBox="0 0 8 16" fill="rgba(0, 0, 0, 0.55)"><path d="M3.99991 4.40034C4.66258 4.40034 5.19978 3.86314 5.19978 3.20048C5.19978 2.53781 4.66258 2.00061 3.99991 2.00061C3.33725 2.00061 2.80005 2.53781 2.80005 3.20048C2.80005 3.86314 3.33725 4.40034 3.99991 4.40034Z" fill="rgba(0, 0, 0, 0.55)"></path><path d="M5.19978 7.99994C5.19978 8.66261 4.66258 9.19981 3.99991 9.19981C3.33725 9.19981 2.80005 8.66261 2.80005 7.99994C2.80005 7.33727 3.33725 6.80007 3.99991 6.80007C4.66258 6.80007 5.19978 7.33727 5.19978 7.99994Z" fill="rgba(0, 0, 0, 0.55)"></path><path d="M5.19978 12.7994C5.19978 13.4621 4.66258 13.9993 3.99991 13.9993C3.33725 13.9993 2.80005 13.4621 2.80005 12.7994C2.80005 12.1367 3.33725 11.5995 3.99991 11.5995C4.66258 11.5995 5.19978 12.1367 5.19978 12.7994Z" fill="rgba(0, 0, 0, 0.55)"></path></svg>
-              </div> 
-            </div>
-          </div>
-          <div class="unidades">
-            <div class="selector">
-              <span data-js="rich-text" class="bf-ui-rich-text">1 u.</span>
-              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="#3483fa"><path d="M4.40175 5.35519L7.99814 8.95157L11.5983 5.35144L12.4468 6.19997L7.99814 10.6486L3.55322 6.20371L4.40175 5.35519Z" fill="#3483fa"></path></svg>
-              <path d="M4.40175 5.35519L7.99814 8.95157L11.5983 5.35144L12.4468 6.19997L7.99814 10.6486L3.55322 6.20371L4.40175 5.35519Z" fill="#3483fa"></path>
-            </div>
-          </div>
-          <div class="precio">
-            <div class="item-precio">
-              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="bf-ui-rich-price bf-ui-rich-price--mid"><meta itemprop="price" content="2.990"><span itemprop="priceCurrency" aria-hidden="true">$<!-- -->&nbsp;</span><span class="bf-ui-price-small">2.990</span></span>
-            
-            </div>
-          </div>
-        </section>
-        <section class="productos-row">
-          <article class="articulos">
-            <div class="imagen">
-              <img src="/public/img/1.png">
-            </div>
-            <div class="descripcion">
-              Arte hecho a mano con pintura al oleo con increibles acabados en azul marino y rojo intenso
-            </div>
-            <div class="botones">
-              <div class="interaciones">
-                <span class="--bold">
-                  <button class="botones-s"> Eliminar</button>
-                </span>
-                 
-
-                <span class="--bold">
-                  <button class="botones-s">  Guardar</button>
-                </span>
-
-                <span class="--bold">
-                  <button class="botones-s">  Ahora</button>
-                </span>
-              </div>
-            </div>
-          </article>
-          
-          <div class="puntos">
-            <div class="contenedor3">
-              <div>
-                <svg aria-hidden="true" width="8" height="16" viewBox="0 0 8 16" fill="rgba(0, 0, 0, 0.55)"><path d="M3.99991 4.40034C4.66258 4.40034 5.19978 3.86314 5.19978 3.20048C5.19978 2.53781 4.66258 2.00061 3.99991 2.00061C3.33725 2.00061 2.80005 2.53781 2.80005 3.20048C2.80005 3.86314 3.33725 4.40034 3.99991 4.40034Z" fill="rgba(0, 0, 0, 0.55)"></path><path d="M5.19978 7.99994C5.19978 8.66261 4.66258 9.19981 3.99991 9.19981C3.33725 9.19981 2.80005 8.66261 2.80005 7.99994C2.80005 7.33727 3.33725 6.80007 3.99991 6.80007C4.66258 6.80007 5.19978 7.33727 5.19978 7.99994Z" fill="rgba(0, 0, 0, 0.55)"></path><path d="M5.19978 12.7994C5.19978 13.4621 4.66258 13.9993 3.99991 13.9993C3.33725 13.9993 2.80005 13.4621 2.80005 12.7994C2.80005 12.1367 3.33725 11.5995 3.99991 11.5995C4.66258 11.5995 5.19978 12.1367 5.19978 12.7994Z" fill="rgba(0, 0, 0, 0.55)"></path></svg>
-              </div> 
-            </div>
-          </div>
-          <div class="unidades">
-            <div class="selector">
-              <span data-js="rich-text" class="bf-ui-rich-text">1 u.</span>
-              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="#3483fa"><path d="M4.40175 5.35519L7.99814 8.95157L11.5983 5.35144L12.4468 6.19997L7.99814 10.6486L3.55322 6.20371L4.40175 5.35519Z" fill="#3483fa"></path></svg>
-              <path d="M4.40175 5.35519L7.99814 8.95157L11.5983 5.35144L12.4468 6.19997L7.99814 10.6486L3.55322 6.20371L4.40175 5.35519Z" fill="#3483fa"></path>
-            </div>
-          </div>
-          <div class="precio">
-            <div class="item-precio">
-              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="bf-ui-rich-price bf-ui-rich-price--mid"><meta itemprop="price" content="2.990"><span itemprop="priceCurrency" aria-hidden="true">$<!-- -->&nbsp;</span><span class="bf-ui-price-small">2.990</span></span>
-            
-            </div>
-          </div>
-        </section>
-        
-        
+          <div class="separador"></div>
+        </section>        
       </div>
+      
       <div class="contenedora-resumen">
         <div class="contenedor-r">
           <div class="ola">
@@ -284,11 +87,10 @@
                   <div class="rigth">
                     <h6 class="ticket-row__right-column--primary-text" data-js="primary-text" aria-label="13430 pesos"><span>13.430</span>
                   </div>
-  
                 </div>
               </div>
               <div class="envio">
-                <a href="">Cual es el costo del envio?  </a>
+                <a href="">Calcular envío</a>
               </div>
               <div class="ticket-row total">
                 <div class="ticket-row-left">
@@ -298,21 +100,15 @@
                   <div class="rigth">
                     <h6 class="ticket-row__right-column--primary-text" data-js="primary-text" aria-label="13430 pesos"><span>13.430</span>
                   </div>
-  
                 </div>
               </div>
               <div class="continuar-compra">
-                <button class="continuar"> Continuar Compra</button>
+                <button class="continuar">Continuar Compra</button>
               </div>
-              
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="hola como estas ">
-      <div></div>
-    </div>
     </div>
   </main>
 </body>

@@ -215,7 +215,27 @@ const controlador = {
         console.error(error);
         res.status(500).json({message: "Error interno del servidor"});
       }
-    }
+    },
+    addToCart: (req,res)=>{
+      console.log(req.params.id);
+      db.producto.findByPk(req.params.id)
+          .then(function (producto) {
+            if (!producto) {
+              return res.send(`
+                <div style="text-align: center; padding-top:30px">
+                  <h1>El producto no existe</h1>
+                  <img style="width:40%;" src="https://matob.web.id/random/wp-content/uploads/sites/2/2021/12/error-404-NOT-FOUND.jpg">
+                </div>
+              `);
+            }
+            cart.addToCart(producto);
+            res.redirect('products/carrito');
+          })
+          .catch(function (error) {
+            console.error(error);
+            res.status(500).send('Error al buscar el producto');
+          });
+    },
 };
 
 module.exports = controlador;

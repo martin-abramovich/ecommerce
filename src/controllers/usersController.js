@@ -109,10 +109,8 @@ const controladorUsers = {
           });
       },
       profile: (req,res) => {
-        res.render("users/profile")
-
-      }
-      
+        res.render("users/profile", {user: req.session.user});
+      }    
 };
 
 module.exports = controladorUsers;
