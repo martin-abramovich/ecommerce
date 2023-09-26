@@ -25,6 +25,7 @@
                 <div class="product-description">
                     <h2><%= producto.nombre %></h2>
                     <p><%= producto.descripcion %></p>
+                    <p>Publicado por: <%= usuario_vendedor.nombre %> <%= usuario_vendedor.apellido %></p>
                     <h3>Precio: $<%= producto.precio %></h3>
                     <form action="/agregar-al-carrito/<%= producto.id %>" method="post">
                         <button type="submit" class="btn btn-dark">Agregar al carrito</button>

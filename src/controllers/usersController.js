@@ -61,7 +61,7 @@ const controladorUsers = {
         } 
 
         db.usuario.create({
-            nombre: req.body.Usuario,
+            nombre: req.body.Usuario + " " + req.body.Apellido,
             email:req.body.Email ,
             clave: Passwordhash ,
             imagen: avatarUrl ,

@@ -46,7 +46,10 @@ const controlador = {
                 </div>
               `);
             }
-            return res.render('products/detalle', { producto, user: req.session.user });
+            db.usuario.findByPk(producto.usuario_id)
+            .then(function (usuario_vendedor) {
+              return res.render('products/detalle', { producto, user: req.session.user, usuario_vendedor });
+          })
           })
           .catch(function (error) {
             console.error(error);

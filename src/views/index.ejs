@@ -56,13 +56,13 @@
     <h3>Nuestros clientes dicen</h3>
     <span class="linea bg-dark"></span>
     <% const testimonios = [
-      { texto: 'Para los amantes del arte, es genial poder comprar de manera segura.', autor: 'José Pazos', obra: 'Ciudades 60x40cm Marco Impreso Decofactory' },
-      { texto: 'Pude comprar en cuotas un cuadro que deseaba hace mucho, al que no hubiera podido acceder en un pago.', autor: 'Tamara Kibelz', obra: 'La Noche Estrellada Van Gogh Pintura Arte Políptico' },
-      { texto: 'Pensé que por vivir en el sur de Argentina me iba a salir más caro el envío que la compra. Me alegré mucho al saber que no solo tenía envío gratis sino que además llegó en 2 días.', autor: 'Rita Arzuaga', obra: 'Berni Canvas 50x70 Obra Manifestacion' }
+      { cualidad: 'Compra segura', texto: 'Para los amantes del arte, es genial poder comprar de manera segura.', autor: 'José Pazos', obra: 'Ciudades 60x40cm Marco Impreso Decofactory' },
+      { cualidad: 'Pagá en cuotas', texto: 'Pude comprar en cuotas un cuadro que deseaba hace mucho, al que no hubiera podido acceder en un pago.', autor: 'Tamara Kibelz', obra: 'La Noche Estrellada Van Gogh Pintura Arte Políptico' },
+      { cualidad: 'Envío gratis', texto: 'Pensé que por vivir en el sur de Argentina me iba a salir más caro el envío que la compra. Me alegré mucho al saber que no solo tenía envío gratis sino que además llegó en 2 días.', autor: 'Rita Arzuaga', obra: 'Berni Canvas 50x70 Obra Manifestacion' }
     ]; %>
     <% testimonios.forEach(testimonio => { %>
       <div class="card w-75 mx-auto mb-2 mt-3">
-        <div class="card-header bg-dark text-light"><%= testimonio.texto %></div>
+        <div class="card-header bg-dark text-light"><%= testimonio.cualidad %></div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
             <p><%= testimonio.texto %></p>
