@@ -1,5 +1,5 @@
 const express = require("express");
-const session = require("cookie-session");
+const session = require("express-session");
 const path = require("path");
 const methodOverride = require("method-override");
 
@@ -7,7 +7,7 @@ const productosRoutes = require('./src/routes/productosRoutes');
 const usersRouters = require('./src/routes/usersRouters');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'src', 'views'));
