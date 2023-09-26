@@ -26,10 +26,9 @@ main{
   width: 100%;
 }
 .descripcion{
-  display: flex;
-  padding: 0 16px;
-  width: calc(100% - 32px);
+  font-weight: bold;
   margin-bottom: 4px;
+  white-space: nowrap;
 }
 .productos-row{
   background: #fff;
@@ -56,16 +55,14 @@ main{
 }
 .puntos{
   margin-bottom: auto;
-  margin-right: 0;
+  margin-right: 10px;
   margin-top: 0;
 }
 svg{
   width: 21px;
   height: 153px;
 }
-.precio{
-  width: 79px;
-}
+
 .item-precio{
   margin-top: 61px;
 }
@@ -86,8 +83,10 @@ svg{
 .ola{
   padding-bottom: 109px;
 }
+
 .ticket-row-contenedor{
-  height: 51px;
+  height: 150px;
+  padding-bottom: 20px;
 }
 .ticket-row{
   display: flex;
@@ -99,9 +98,11 @@ svg{
 }
 .total{
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .continuar-compra{
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .continuar{
@@ -125,8 +126,13 @@ box-shadow: .5rem .5rem 1rem #ccc,
 }
 .productos-header{
   text-align: center;
+  margin-bottom: 10px;
 }
 
-
+.vaciar {
+  color: #CC3300;
+  margin-top: 10px;
+  width: 190px;
+}
 
 

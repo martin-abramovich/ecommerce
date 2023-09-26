@@ -4,6 +4,7 @@ const { clear } = require('console');
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
 const Sequelize = require('sequelize');
+const cart = require('../../public/js/cart');
 
 const cloudinaryConfig = {
     cloud_name: 'dgmxc8fal',
@@ -30,7 +31,8 @@ const controlador = {
     },
 
     carrito: (req, res) => {
-        res.render('products/carrito', {user: req.session.user});
+        const cartItems = cart.getCart();
+        res.render('products/carrito', { cart: cartItems, user: req.session.user});
     },
 
     detalle: function (req, res) {
@@ -217,7 +219,6 @@ const controlador = {
       }
     },
     addToCart: (req,res)=>{
-      console.log(req.params.id);
       db.producto.findByPk(req.params.id)
           .then(function (producto) {
             if (!producto) {
@@ -229,13 +230,23 @@ const controlador = {
               `);
             }
             cart.addToCart(producto);
-            res.redirect('products/carrito');
+            res.redirect('/carrito');
           })
           .catch(function (error) {
             console.error(error);
             res.status(500).send('Error al buscar el producto');
           });
     },
+    carritoQuitar: (req, res) => {
+      const productId = req.body.productId;
+      console.log(cart.getCart());
+      cart.removeFromCart(productId);
+      res.redirect('/carrito');
+    },
+    carritoVaciar: (req, res) => {
+      cart.clearCart();
+      res.redirect('/carrito');
+    }
 };
 
 module.exports = controlador;

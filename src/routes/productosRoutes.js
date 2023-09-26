@@ -13,7 +13,6 @@ const upload = multer();
 
 // Rutas
 router.get('/', productosController.index);
-router.get('/carrito', productosController.carrito);
 router.get('/detalle/:id', productosController.detalle);
 router.get('/crear', authMiddleware, productosController.crear);
 router.post('/crear', upload.single('imagen'), productosController.creados);
@@ -25,18 +24,8 @@ router.get('/buscar', productosController.buscar);
 
 // Carrito
 router.post("/agregar-al-carrito/:id", productosController.addToCart);
-router.get('/carrito', (req, res) => {
-    const cartItems = cart.getCart();
-    res.render('carrito', { cart: cartItems });
-});
-router.post('/eliminar-del-carrito', (req, res) => {
-    const productId = req.body.productId;
-    cart.removeFromCart(productId);
-    res.redirect('/carrito');
-});
-router.post('/vaciar-carrito', (req, res) => {
-    cart.clearCart();
-    res.redirect('/carrito');
-});
+router.get('/carrito', productosController.carrito);
+router.delete("/eliminar-del-carrito", productosController.carritoQuitar);
+router.delete('/vaciar-carrito', productosController.carritoVaciar);
 
 module.exports = router;
