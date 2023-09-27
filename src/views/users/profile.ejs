@@ -15,33 +15,33 @@
         <div class="perfil-usuario-header">
           <div class="perfil-usuario-portada" id="portada">
             <div class="perfil-usuario-avatar">
-                <img src="" alt="">
+                <img src="<%= user.imagen %>" alt="">
             </div>
           </div>
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-descripcion">
-                <h1 class="titulo">
-                    Nuevo usuario
+                <h1 class="titulo mt-3">
+                    <%= user.nombre %>
                 </h1>
                 <p class="texto">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, in voluptatem amet explicabo quisquam atque totam consequatur pariatur sint ipsam quaerat possimus accusamus enim unde laborum animi eveniet, id ea!
+                    --------- ¡Hola <%= user.nombre %>! En esta sección podrás administrar los productos que publicaste. Por ejemplo, si deseas editar o eliminar algún producto. 👇🏼 ----------
                 </p>
             </div>
-            <div class="misProductos">
-                <h2>mis productos</h2>
+            <div class="misProductos mt-4">
+                <h2>Productos publicados</h2>
             </div>
             <div class="perfil-usuario-productos">
-                <div class="productos">
-                    <div class="imagen-producto">
-                        <img class="imagen" src="/public/img/logo.png"> 
-                    </div>
-                    <div class="resumen">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eos quaerat libero cupiditate accusantium ullam eveniet tempora voluptas, impedit, magnam facere minus distinctio deserunt eum. Repudiandae cupiditate vitae veritatis velit?</p>
-                    </div>
-                </div>
-                
-                
+                <% for(let producto of productos) { %>
+                    <div class="productos">
+                        <div class="imagen-producto">
+                            <a href="/detalle/<%= producto.id %>"><img class="imagen" src="<%= producto.imagen %>"></a>
+                        </div>
+                        <div class="resumen">
+                            <p><%= producto.nombre %></p>
+                        </div>
+                    </div> 
+                <% } %>  
             </div>
         </div>
     </section>

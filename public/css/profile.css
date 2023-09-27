@@ -35,6 +35,7 @@
     position: absolute;
     bottom: -40px;
     left: calc(50% - 90px);
+    
 }
 .seccion-perfil-usuario .perfil-usuario-body{
     width: 80%;
@@ -49,13 +50,11 @@
     background-color: #fff;
     border-radius: 15px;
     text-align: center;
-
 }
 .perfil-usuario-productos{
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
-
 }
 .boton{
     bottom: 0;
@@ -66,15 +65,15 @@
     height: 20px;
     margin-top: 2px;
     background-color: transparent;
-
 }
 .boton2{
     margin-left: 15px;
     
 }
 .imagen{
-    width: 50px;
-    height: 50px;
+    width: 300px;
+    height: 300px;
+    margin-left: 20px;
 }
 .misProductos{
     margin-top: 10px;
@@ -82,4 +81,10 @@
 .cambiar{
     width: 30px;
     height: 30px;
+}
+.perfil-usuario-avatar img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }

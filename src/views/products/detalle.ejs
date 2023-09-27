@@ -27,13 +27,16 @@
                     <p><%= producto.descripcion %></p>
                     <p>Publicado por: <%= usuario_vendedor.nombre %> <%= usuario_vendedor.apellido %></p>
                     <h3>Precio: $<%= producto.precio %></h3>
+                    <% if (user != undefined && user.id === usuario_vendedor.id) {%>
+                        <a href="/edicion/<%= producto.id %>"><button class="btn btn-dark mt-4">Editar</button></a>
+                        <form action="/delete/<%= producto.id %>?_method=DELETE" method="post">
+                            <button type="submit" class="btn btn-dark mt-2">Eliminar</button>
+                        </form>
+                    <% } else { %>
                     <form action="/agregar-al-carrito/<%= producto.id %>" method="post">
-                        <button type="submit" class="btn btn-dark">Agregar al carrito</button>
+                        <button type="submit" class="btn btn-dark mt-4">Agregar al carrito</button>
                     </form>
-                    <a href="/edicion/<%= producto.id %>"><button class="btn btn-dark">Editar</button></a>
-                    <form action="/delete/<%= producto.id %>?_method=DELETE" method="post">
-                        <button type="submit" class="btn btn-dark mt-2">Eliminar</button>
-                    </form>
+                    <% } %>
                 </div>
             </div>
         </div>

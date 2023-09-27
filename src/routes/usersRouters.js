@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require("../database/models");
 const guestMiddleware = require('../../middlewares/guestMiddleware');
+const authMiddleware = require('../../middlewares/authMiddleware');
 
 async function emailExists(Email) {
     const user = await db.usuario.findOne({
@@ -47,15 +48,7 @@ router.post('/login', [
     check('email').isEmail().withMessage('Email inválido'),
     check('password').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')
 ], usersController.inicio);
-
-router.get('/check', (req, res) => {
-    if (req.session.usuarioLogueado == undefined) {
-        res.send('No estás logueado');
-    } else {
-        res.send('Datos del usuario logueado: ' + req.session.usuarioLogueado.Email);
-    }
-});
-router.get('/profile', usersController.profile)
+router.get('/profile', authMiddleware, usersController.profile)
 
 
 module.exports = router;

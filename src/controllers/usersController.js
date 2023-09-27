@@ -41,7 +41,7 @@ const controladorUsers = {
         const { Password } = req.body;
         const Passwordhash = await encrypt(Password);
 
-        let avatarUrl = "/img/default-avatar.png";
+        let avatarUrl = "/img/default.jpg";
         if (req.file) {
             const imageBuffer = req.file.buffer;
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
@@ -109,7 +109,14 @@ const controladorUsers = {
           });
       },
       profile: (req,res) => {
-        res.render("users/profile", {user: req.session.user});
+        db.producto.findAll({ where: { usuario_id: req.session.user.id } })
+        .then((productos_publicados) => {
+          return res.render("users/profile", {user: req.session.user, productos: productos_publicados});
+        })
+        .catch(function (error) {
+          console.error(error);
+          res.status(500).send('Error al buscar el producto');
+        });
       }    
 };
 
