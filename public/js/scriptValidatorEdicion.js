@@ -11,6 +11,5 @@ document.getElementById("editProductForm").addEventListener("submit", function(e
 
     if (precio !== "" && isNaN(precio)) {
         alert("El precio debe ser un número válido");
-       
     }
 });
