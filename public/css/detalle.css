@@ -9,11 +9,14 @@
 .product-image {
     flex: 0 0 auto;
     margin-right: 20px;
+    align-items: center;
+    display: flex;
 }
 
 .product-image img {
     max-width: 100%;
     height: auto;
+    
 }
 
 .zoomable {
@@ -24,6 +27,8 @@
     transform: scale(1.1);
 }
 .product-image img{
-    width: 400px;
+    width: auto;
     height: 400px;
+    align-items: center;
+    display: flex;
 }
