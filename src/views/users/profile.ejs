@@ -9,44 +9,46 @@
         <script src="https://kit.fontawesome.com/c9cf8990b8.js" crossorigin="anonymous"></script>
         <title>Galante</title>
       </head>
-      
 <body>
     <%- include('../partials/header.ejs') %>
-    
-    <div class="contenido-profile">
-        <div class="main-contenedor">
-            <div class="profile-header">
-                <div class="main">
-                    <div class="contenido">
-                        <div class="imagen">
-                            <img class="img" src="/public/img/default.png">
-                        </div>
-                        <div class="nombre-email">
-                            <h1>Daniel Morales</h1>
-                            <div class="email">
-                                <span>danielmoralese26@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="editar">
-                            <button class="edit"> Editar Perfil</button>
-                        </div>
-                        <div></div>
-                    </div>
-
-                    
-                </div>
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+          <div class="perfil-usuario-portada" id="portada">
+            <div class="perfil-usuario-avatar">
+                <img src="" alt="">
             </div>
-            <div class="crear-guardar">
+          </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-descripcion">
+                <h1 class="titulo">
+                    Nuevo usuario
+                </h1>
+                <p class="texto">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, in voluptatem amet explicabo quisquam atque totam consequatur pariatur sint ipsam quaerat possimus accusamus enim unde laborum animi eveniet, id ea!
+                </p>
+            </div>
+            <div class="misProductos">
+                <h2>mis productos</h2>
+            </div>
+            <div class="perfil-usuario-productos">
+                <div class="productos">
+                    <div class="imagen-producto">
+                        <img class="imagen" src="/public/img/logo.png"> 
+                    </div>
+                    <div class="resumen">
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eos quaerat libero cupiditate accusantium ullam eveniet tempora voluptas, impedit, magnam facere minus distinctio deserunt eum. Repudiandae cupiditate vitae veritatis velit?</p>
+                    </div>
+                </div>
                 
-                <div class="crear">
-                    <button class="crearP"> Crear</button>
-                </div>
-                <div class="guardar">
-                    <button class="guardado"> guardado</button>
-                </div>
+                
             </div>
         </div>
-    </div>
-    
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+<script src='/js/colores.js'></script>
+
 </body>
+
 </html>

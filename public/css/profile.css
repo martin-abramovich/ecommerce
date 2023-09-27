@@ -1,70 +1,85 @@
-
-.contenido-profile{
-    padding: 70px;
-}
-.main{
-    max-width: 488px;
-    width: 100%;
-}
-.profile-header{
-    justify-content: center;
+.seccion-perfil-usuario .perfil-usuario-body,
+.seccion-perfil-usuario{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+.perfil-usuario-header{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background: linear-gradient(#8873FF, transparent);
+    margin-bottom: 10px;
+}
+.seccion-perfil-usuario .perfil-usuario-portada{
+    width: 100%;
+    display: block;
+    position: relative;
+    width: 80%;
+    height: 17rem;
+    background: linear-gradient(45deg,#8873FF, #317fff);
+    border-radius: 0 0 20px 20px;
+}
+.seccion-perfil-usuario .perfil-usuario-avatar{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #ffff;
+    background-color: #dfeff2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgb(0,0,0,.2);
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 90px);
+}
+.seccion-perfil-usuario .perfil-usuario-body{
+    width: 80%;
+    align-items: center;
+    margin-top: 11px;
+}
+.seccion-perfil-usuario .perfil-usuario-descripcion,
+.perfil-usuario-productos{
+    display:block;
+    padding: 1rem;
+    box-shadow: 0 0 12px rgb(0,0,0,.2);
+    background-color: #fff;
+    border-radius: 15px;
+    text-align: center;
+
+}
+.perfil-usuario-productos{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.boton{
+    bottom: 0;
+    right: 38px;
+    top: 131px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    background-color: transparent;
+
+}
+.boton2{
+    margin-left: 15px;
     
 }
 .imagen{
-    display: flex;
-    margin-top: 77px;
-    justify-content: center;
-    border: 3px solid red;
-    width: 120px;
-    height: 120px;
+    width: 50px;
+    height: 50px;
 }
-.img{
-    justify-content: center;
-    display: flex;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 2px solid black;
-    
-    
-   
+.misProductos{
+    margin-top: 10px;
 }
-.contenido{
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-}
-.email{
-    margin-top: 11px;
-    text-align: center;
-}
-.editar{
-    margin-top: 24px;
-}
-.edit{
-    border-radius: 30px;
-    border: 1px solid #6c757d;
-}
-.crear-guardar{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    margin-top: 50px;
-
-    
-   
-
-}
-.crear{
-    margin-right: 10px;
-    
-}
-.guardar{
-    margin-left: 10px;
-    
+.cambiar{
+    width: 30px;
+    height: 30px;
 }
