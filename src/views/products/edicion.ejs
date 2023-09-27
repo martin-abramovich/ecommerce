@@ -10,7 +10,7 @@
     
     <h2 style="margin-top: 100px; margin-bottom: 30px;">Edición de producto</h2>
 
-    <form action="/edicion/<%= producto.id %>?_method=PUT" method="post" class="mb-3" enctype="multipart/form-data">
+    <form id="editProductForm" action="/edicion/<%= producto.id %>?_method=PUT" method="post" class="mb-3" enctype="multipart/form-data">
       <label for="titulo" class="form-label">Titulo</label>
       <input type="text" class="form-control" id="titulo" name="titulo" value="<%= producto.nombre %>">
 

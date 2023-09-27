@@ -4,12 +4,11 @@ document.getElementById("editProductForm").addEventListener("submit", function(e
     let precio = document.getElementById("precio").value;
     let descripcion = document.getElementById("descripcion").value;
 
-    if (titulo === "" && precio === "" && descripcion === "") {
-        alert("Debes realizar al menos un cambio antes de guardar.");
-         // Evita que se envíe el formulario si no se realiza ningún cambio.
-    }
-
-    if (precio !== "" && isNaN(precio)) {
+    if (titulo === "" || descripcion === "") {
+        alert("El titulo o la descripción están vacías");
+    } else if (precio == "" || isNaN(precio)) {
         alert("El precio debe ser un número válido");
+    } else {
+        this.submit(); 
     }
 });
