@@ -13,7 +13,7 @@ document.getElementById("productForm").addEventListener("submit", function(event
     let precio = document.getElementById("precio").value;
     let descripcion = document.getElementById("descripcion").value;
 
-    if (nombre === "" || precio === "" || descripcion === "") {
+    if (titulo === "" || precio === "" || descripcion === "") {
         alert("Todos los campos son obligatorios");
         event.preventDefault(); // Evita que se envíe el formulario
     }
