@@ -23,3 +23,7 @@
 .zoomable:hover {
     transform: scale(1.1);
 }
+.product-image img{
+    width: 400px;
+    height: 400px;
+}

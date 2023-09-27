@@ -44,7 +44,7 @@ img{
 
 .descripcion-producto{
     position: absolute; /* Establecer la posición absoluta para el título */
-    top: 80%; /* Alinear el título en el centro vertical */
+    top: 60%; /* Alinear el título en el centro vertical */
     left: 50%; /* Alinear el título en el centro horizontal */
     transform: translate(-50%, -50%); /* Centrar el título en el medio */
     padding: 10px; /* Espaciado interno del título */
@@ -83,9 +83,14 @@ img{
 @media only screen and (max-width: 1440px){
     .producto-mobile{
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         padding: 10px;
         max-width: 100%; /* Establecer el ancho máximo del contenedor al 100% */
         box-sizing: border-box; /* Incluir el padding en el ancho máximo */
     }
 }
+.galeria img {
+    object-fit: cover;
+    height: 310px;
+    width: 100%;
+ }
