@@ -134,5 +134,47 @@ box-shadow: .5rem .5rem 1rem #ccc,
   margin-top: 10px;
   width: 190px;
 }
+@media (max-width: 668px){
+  .contenedora{
+    display: flex;
+    flex-direction: column;
+    margin: 168px auto 60px;
+  }
+  .imagen{
+    align-items: center;
+    text-align: center;
+    margin-left: 90px;
+  }
+  .descripcion{
+    text-align: center;
+    align-items: center;
+    width: 200px;
+  }
+  .--bold .puntos{
+    display: flex;
+  }
+  .precio{
+    width: 1px;
+    height: 1px;
+  }
+  .puntos{
+   display: none;
+  }
+  .item-precio{
+    margin-top: -27px;
+    margin-left: 208px;
+  }
+  .productos-row{
+    height: 260px;
+  }
+  .price{
+    margin-left: 10px;
+  }
+  .botones-s{
+    margin-left: 85px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+  }
+}
 
 
