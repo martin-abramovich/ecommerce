@@ -26,7 +26,9 @@
                 </h1>
                 <div class="contenedor-texto">
                     <p class="texto">
-                    ---------¡Hola <%= user.nombre %>! En esta sección podrás administrar los productos que publicaste. Por ejemplo, si deseas editar o eliminar algún producto. 👇🏼 ----------
+                    <% var nombre_completo = user.nombre.split(" "); %>
+                    <% var nombre = nombre_completo[0]; %>
+                    ¡Hola <%= nombre %>! En esta sección podrás administrar los productos que publicaste 👇🏼
                     </p>
                 </div>
             </div>

@@ -33,6 +33,7 @@
                             <button type="submit" class="btn btn-dark mt-2">Eliminar</button>
                         </form>
                     <% } else { %>
+                        <!--if user.carrito contains producto disable button agregar al carrito-->
                     <form action="/agregar-al-carrito/<%= producto.id %>" method="post">
                         <button type="submit" class="btn btn-dark mt-4">Agregar al carrito</button>
                     </form>
