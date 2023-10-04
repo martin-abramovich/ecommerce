@@ -88,9 +88,28 @@ img{
         max-width: 100%; /* Establecer el ancho máximo del contenedor al 100% */
         box-sizing: border-box; /* Incluir el padding en el ancho máximo */
     }
+    .todo{
+        display: none;
+    }
+    
+    
+    
+}
+.todo{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;   
 }
 .galeria img {
     object-fit: cover;
     height: 310px;
     width: 100%;
  }
+ .navbar{
+    display: flex;
+   flex-direction: row;    
+  }
+  
+
