@@ -74,6 +74,30 @@ form{
 }
 .imagen-producto{
     margin-right: 18px;
-    
 
+}
+@media (max-width: 668px){
+    .productos{
+        flex-direction: column;
+        justify-content: center;
+    }
+    img{
+        align-items: center;
+        justify-content: center;
+    }
+    .imagen{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-left: 109px;
+        
+    }
+    .imagen-producto{
+        margin: 0;
+       
+    }
+    .precio{
+        margin-bottom: 10px;
+        text-align: center;
+    }
 }
