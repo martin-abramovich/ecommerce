@@ -80,7 +80,7 @@ img{
     font-weight: bold;
 }
 
-@media only screen and (max-width: 1440px){
+@media (max-width: 668px){
     .producto-mobile{
         display: flex;
         justify-content: center;
@@ -91,25 +91,11 @@ img{
     .todo{
         display: none;
     }
-    
-    
-    
+    .carousel-item{
+        height: 80px;
+        
+    }
 }
-.todo{
-    display: flex;
-    flex-direction: column;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;   
-}
-.galeria img {
-    object-fit: cover;
-    height: 310px;
-    width: 100%;
- }
- .navbar{
-    display: flex;
-   flex-direction: row;    
-  }
-  
+
+
 
