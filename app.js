@@ -5,6 +5,8 @@ const methodOverride = require("method-override");
 
 const productosRoutes = require('./src/routes/productosRoutes');
 const usersRouters = require('./src/routes/usersRouters');
+const apiRouters = require('./src/routes/apiRouters');
+
 
 const app = express();
 const PORT = 3000;
@@ -25,6 +27,7 @@ app.use(express.static(publicPath));
 
 app.use('/', productosRoutes);
 app.use('/users', usersRouters);
+app.use('/api', apiRouters);
 
 app.use('*', (req, res) => {
   res.send(`
