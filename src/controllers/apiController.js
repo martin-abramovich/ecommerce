@@ -68,6 +68,26 @@ module.exports = {
                     });
                 });
             });
-    }
-    
+        
+    },
+    categories: (req, res) => {
+        db.categoria
+            .findAll()
+            .then(categorias => {
+                return res.status(200).json({
+                    total: categorias.length,
+                    status: 200
+                });
+            })
+},
+    product: (req, res) => {
+       db.producto
+          .findByPk(req.params.id)
+          .then(producto => {
+             return res.status(200).json({
+                data: producto,
+                status: 200
+            });
+        })
+}
 }
