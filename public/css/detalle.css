@@ -32,3 +32,72 @@
     align-items: center;
     display: flex;
 }
+.titulo{
+    top: 0;
+    position: relative;
+}
+.col-m5{
+    border-radius: 6px;
+    box-shadow: 2px 2px 33px 2px rgba(0,0,0,.12);
+
+}
+.btn-dark{
+    background-color: blue;
+}
+form{
+    text-align: center;
+}
+.col-md-6{
+    height: 400px;
+
+}
+.titulo2{
+    margin-top: 17px;
+}
+.imagen{
+    width: 120px;
+    height: 120px;
+}
+.productos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    
+}
+.resumen{
+    text-align: center;
+}
+.precio2{
+    text-align: center;
+}
+.imagen-producto{
+    margin-right: 18px;
+
+}
+@media (max-width: 668px){
+    .productos{
+        flex-direction: column;
+        justify-content: center;
+    }
+    img{
+        align-items: center;
+        justify-content: center;
+    }
+    .imagen{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-left: 109px;
+        
+    }
+    .imagen-producto{
+        margin: 0;
+       
+    }
+    .precio{
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}

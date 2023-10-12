@@ -14,7 +14,7 @@ img{
 
 .galeria img {
     object-fit: cover;
-    height: 100%;
+    height: 350px;
     width: 100%;
 }
 
@@ -80,7 +80,7 @@ img{
     font-weight: bold;
 }
 
-@media only screen and (max-width: 1440px){
+@media (max-width: 668px){
     .producto-mobile{
         display: flex;
         justify-content: center;
@@ -88,9 +88,14 @@ img{
         max-width: 100%; /* Establecer el ancho máximo del contenedor al 100% */
         box-sizing: border-box; /* Incluir el padding en el ancho máximo */
     }
+    .todo{
+        display: none;
+    }
+    .carousel-item{
+        height: 80px;
+        
+    }
 }
-.galeria img {
-    object-fit: cover;
-    height: 310px;
-    width: 100%;
- }
+
+
+

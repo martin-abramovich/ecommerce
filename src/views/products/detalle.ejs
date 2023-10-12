@@ -21,23 +21,96 @@
                     <img src="<%= producto.imagen %>" alt="Nombre del producto" class="img-fluid zoomable">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-m5">
                 <div class="product-description">
-                    <h2><%= producto.nombre %></h2>
-                    <p><%= producto.descripcion %></p>
-                    <p>Publicado por: <%= usuario_vendedor.nombre %> <%= usuario_vendedor.apellido %></p>
-                    <h3>Precio: $<%= producto.precio %></h3>
+                    <h2 class="titulo"><%= producto.nombre %></h2>
+                    <p class="descripcion"><%= producto.descripcion %></p>
+                    <p class="vendedor">Publicado por: <%= usuario_vendedor.nombre %> <%= usuario_vendedor.apellido %></p>
+                    <h3 class="precio"> $<%= producto.precio %></h3>
                     <% if (user != undefined && user.id === usuario_vendedor.id) {%>
                         <a href="/edicion/<%= producto.id %>"><button class="btn btn-dark mt-4">Editar</button></a>
                         <form action="/delete/<%= producto.id %>?_method=DELETE" method="post">
                             <button type="submit" class="btn btn-dark mt-2">Eliminar</button>
                         </form>
                     <% } else { %>
+                    
+                    <a href="">Ver metodos de pagos</a>
+
                         <!--if user.carrito contains producto disable button agregar al carrito-->
                     <form action="/agregar-al-carrito/<%= producto.id %>" method="post">
                         <button type="submit" class="btn btn-dark mt-4">Agregar al carrito</button>
                     </form>
+                    <form action="" method="post">
+                        <button type="submit" class="btn btn-dark mt-4">Compra Ahora</button>
+                    </form>
                     <% } %>
+                </div>
+            </div>
+            <div class="productos-user">
+                <div class="productos-user-pag">
+                <h3 class="titulo titulo2"> productos</h3>
+                <div class="perfil-usuario-productos">
+                    
+                        <div class="productos">
+                            <div class="imagen-producto">
+                                <a href=""><img class="imagen" src="/public/img/4.jpg"></a>
+                                <div class="resumen">
+                                    <p>Ola</p>
+                                </div>
+                                <div class="precio">
+                                    122$
+                                </div>
+                            </div>
+                            <div class="imagen-producto">
+                                <a href=""><img class="imagen" src="/public/img/4.jpg"></a>
+                                <div class="resumen">
+                                    <p>Ola</p>
+                                </div>
+                                <div class="precio precio2">
+                                    122$
+                                </div>
+                            </div>
+                            <div class="imagen-producto">
+                                <a href="" class="ola"><img class="imagen" src="/public/img/4.jpg"></a>
+                                <div class="resumen">
+                                    <p>Ola</p>
+                                </div>
+                                <div class="precio precio2">
+                                    122$
+                                </div>
+                            </div>
+                            <div class="imagen-producto">
+                                <a href=""><img class="imagen" src="/public/img/4.jpg"></a>
+                                <div class="resumen">
+                                    <p>Ola</p>
+                                </div>
+                                <div class="precio precio2">
+                                    122$
+                                </div>
+                            </div>
+                            <div class="imagen-producto">
+                                <a href=""><img class="imagen" src="/public/img/4.jpg"></a>
+                                <div class="resumen">
+                                    <p>Ola</p>
+                                </div>
+                                <div class="precio precio2">
+                                    122$
+                                </div>
+                            </div>
+                            <div class="imagen-producto">
+                                <a href=""><img class="imagen" src="/public/img/4.jpg"></a>
+                                <div class="resumen">
+                                    <p>Ola</p>
+                                </div>
+                                <div class="precio precio2">
+                                    122$
+                                </div>
+                            </div>
+                            
+                           
+                        </div> 
+                    
+                </div>
                 </div>
             </div>
         </div>
