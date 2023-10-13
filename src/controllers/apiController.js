@@ -72,14 +72,25 @@ module.exports = {
     },
     categories: (req, res) => {
         db.categoria
-            .findAll()
+            .findAll({
+                include: [
+                    // Incluir la relación para usuario_id y categoria_id
+                    { model: db.usuario, as: 'usuario' },
+                    { model: db.categoria, as: 'categoria' }
+                ],
+                attributes: {
+                    // Seleccionar las columnas que deseas incluir en la respuesta
+                    exclude: ['venta_id']
+                }
+            })
             .then(categorias => {
                 return res.status(200).json({
                     total: categorias.length,
-                    status: 200
+                    status: 200,
+                    data: categorias  // Devolver los resultados con las claves foráneas resueltas
                 });
             })
-},
+    },
     product: (req, res) => {
        db.producto
           .findByPk(req.params.id)
