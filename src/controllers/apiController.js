@@ -73,11 +73,7 @@ module.exports = {
     categories: (req, res) => {
         db.categoria
             .findAll({
-                include: [
-                    // Incluir la relación para usuario_id y categoria_id
-                    { model: db.usuario, as: 'usuario' },
-                    { model: db.categoria, as: 'categoria' }
-                ],
+               
                 attributes: {
                     // Seleccionar las columnas que deseas incluir en la respuesta
                     exclude: ['venta_id']
