@@ -36,26 +36,35 @@ const controlador = {
     },
 
     detalle: function (req, res) {
-        db.producto.findByPk(req.params.id)
-            .then(function (producto) {
-                if (!producto) {
-                    return res.send(`
-                        <div style="text-align: center; padding-top:30px">
-                            <h1>El producto no existe</h1>
-                            <img style="width:40%;" src="https://matob.web.id/random/wp-content/uploads/sites/2/2021/12/error-404-NOT-FOUND.jpg">
-                        </div>
-                    `);
-                }
-                db.usuario.findByPk(producto.usuario_id)
-                    .then(function (usuario_vendedor) {
-                        return res.render('products/detalle', { producto, user: req.session.user, usuario_vendedor });
-                    });
-            })
-            .catch(function (error) {
-                console.error(error);
-                res.status(500).send('Error al buscar el producto');
-            });
+      const productoId = req.params.id;
+  
+      db.producto.findByPk(productoId)
+          .then(function (producto) {
+              if (!producto) {
+                  return res.send(/* ... manejo de error ... */);
+              }
+  
+              db.usuario.findByPk(producto.usuario_id)
+                  .then(function (usuario_vendedor) {
+                      // Obtén hasta 6 productos sugeridos de manera aleatoria
+                      db.producto.findAll({
+                          where: {
+                              id: { [db.Sequelize.Op.not]: productoId } // Excluye el producto actual
+                          },
+                          order: db.Sequelize.literal('RAND()'), // Ordena aleatoriamente
+                          limit: 6 // Limita a 6 productos
+                      })
+                      .then(function (productos) {
+                          return res.render('products/detalle', { producto, user: req.session.user, usuario_vendedor, productos });
+                      });
+                  });
+          })
+          .catch(function (error) {
+              console.error(error);
+              res.status(500).send('Error al buscar el producto');
+          });
     },
+  
 
     crear: (req, res) => {
         db.categoria.findAll()
