@@ -6,10 +6,21 @@ const methodOverride = require("method-override");
 const productosRoutes = require('./src/routes/productosRoutes');
 const usersRouters = require('./src/routes/usersRouters');
 const apiRouters = require('./src/routes/apiRouters');
+const cors = require('cors'); // Importa el módulo 'cors'
+
+
+
+
 
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
+
+// Configura CORS para permitir solicitudes desde cualquier origen
+app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'src', 'views'));
