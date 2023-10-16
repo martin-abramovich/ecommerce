@@ -8,18 +8,13 @@ const usersRouters = require('./src/routes/usersRouters');
 const apiRouters = require('./src/routes/apiRouters');
 const cors = require('cors'); // Importa el módulo 'cors'
 
-
-
-
-
-
 const app = express();
 const PORT = 3001;
 
 // Configura CORS para permitir solicitudes desde cualquier origen
 app.use(cors());
 app.use(cors({
-  origin: 'https://galante-dashboard.onrender.com/'
+  origin: 'https://galante-dashboard.onrender.com'
 }));
 
 app.set("view engine", "ejs");
