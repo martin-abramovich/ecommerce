@@ -19,7 +19,7 @@ const PORT = 3001;
 // Configura CORS para permitir solicitudes desde cualquier origen
 app.use(cors());
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: 'https://galante-dashboard.onrender.com/'
 }));
 
 app.set("view engine", "ejs");
