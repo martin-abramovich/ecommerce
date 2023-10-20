@@ -18,6 +18,12 @@
     height: auto;
     
 }
+.vendedor {
+   text-align: center;
+}
+.descripcion {
+    text-align: center;
+}
 
 .zoomable {
     transition: transform 0.2s ease;
@@ -35,6 +41,7 @@
 .titulo{
     top: 0;
     position: relative;
+    margin-top: 30px;
 }
 .col-m5{
     border-radius: 6px;
@@ -57,6 +64,7 @@ form{
 .imagen{
     width: 120px;
     height: 120px;
+    
 }
 .productos{
     display: flex;
@@ -84,13 +92,15 @@ form{
     img{
         align-items: center;
         justify-content: center;
+       
     }
     .imagen{
         align-items: center;
         display: flex;
         justify-content: center;
         margin-left: 109px;
-        
+        max-width: 100%; 
+        height: auto;
     }
     .imagen-producto{
         margin: 0;

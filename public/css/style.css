@@ -80,13 +80,21 @@ img{
     font-weight: bold;
 }
 
-@media (max-width: 668px){
+@media (max-width: 700px){
     .producto-mobile{
         display: flex;
         justify-content: center;
         padding: 10px;
         max-width: 100%; /* Establecer el ancho máximo del contenedor al 100% */
         box-sizing: border-box; /* Incluir el padding en el ancho máximo */
+    }
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer {
+        display: flex;
     }
     .todo{
         display: none;
